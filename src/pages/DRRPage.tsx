@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
+import drrImg from "../assets/drr-portrait.jpg";
 
 const DRRPage = () => (
   <div>
@@ -7,11 +8,7 @@ const DRRPage = () => (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[320px_1fr] gap-10 items-start">
         <div className="relative">
-          <div className="w-full h-[420px] bg-gradient-to-br from-blue-800 to-blue-600 rounded-lg flex items-center justify-center">
-            <div className="w-28 h-28 rounded-full bg-yellow-400 flex items-center justify-center">
-              <span className="text-blue-900 font-display font-bold text-3xl">DRR</span>
-            </div>
-          </div>
+          <img src={drrImg} alt="District Rotaract Representative" className="w-full h-[420px] object-cover rounded-lg" loading="lazy" width={640} height={864} />
           <span className="absolute bottom-4 left-4 bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded">DRR 2024–2025</span>
         </div>
         <div>

@@ -4,11 +4,18 @@ import { FaUsers, FaMapMarkerAlt, FaHandHoldingHeart, FaCalendarAlt } from "reac
 import SectionTitle from "../components/SectionTitle";
 import HighlightBox from "../components/HighlightBox";
 import EventItem from "../components/EventItem";
+import heroSlide1 from "../assets/hero-slide-1.jpg";
+import heroSlide2 from "../assets/hero-slide-2.jpg";
+import heroSlide3 from "../assets/hero-slide-3.jpg";
+import healthImg from "../assets/health-outreach.jpg";
+import literacyImg from "../assets/literacy-campaign.jpg";
+import greenImg from "../assets/green-ghana.jpg";
+import drrImg from "../assets/drr-portrait.jpg";
 
 const slides = [
-  { tag: "Rotaract District 9104", title: "Elevating Service Through Inspired Leadership", sub: "Empowering young leaders across Ghana to create lasting change in their communities.", cta1: { label: "Join Rotaract", to: "/join" }, cta2: { label: "Learn More", to: "/about/rotaract" } },
-  { tag: "Theme 2024–2025", title: "The Magic of Rotary", sub: "Under the leadership of RI President Stephanie Urchick, we embrace the magic within us all.", cta1: { label: "Explore the Theme", to: "/about/rotary-international" }, cta2: { label: "Our Projects", to: "/projects/signature" } },
-  { tag: "Annual Conference", title: "DLAC 2025 District Conference", sub: "Join hundreds of Rotaractors for a transformational experience. Register now!", cta1: { label: "Register Now", to: "/events/dlac" }, cta2: { label: "View Events", to: "/events/calendar" } },
+  { tag: "Rotaract District 9104", title: "Elevating Service Through Inspired Leadership", sub: "Empowering young leaders across Ghana to create lasting change in their communities.", cta1: { label: "Join Rotaract", to: "/join" }, cta2: { label: "Learn More", to: "/about/rotaract" }, image: heroSlide1 },
+  { tag: "Theme 2024–2025", title: "The Magic of Rotary", sub: "Under the leadership of RI President Stephanie Urchick, we embrace the magic within us all.", cta1: { label: "Explore the Theme", to: "/about/rotary-international" }, cta2: { label: "Our Projects", to: "/projects/signature" }, image: heroSlide2 },
+  { tag: "Annual Conference", title: "DLAC 2025 District Conference", sub: "Join hundreds of Rotaractors for a transformational experience. Register now!", cta1: { label: "Register Now", to: "/events/dlac" }, cta2: { label: "View Events", to: "/events/calendar" }, image: heroSlide3 },
 ];
 
 const stats = [
@@ -19,9 +26,9 @@ const stats = [
 ];
 
 const highlights = [
-  { emoji: "🏥", cat: "Health", title: "Free Health Outreach in Tamale", excerpt: "Over 500 community members received free medical screenings during our annual health initiative.", date: "Dec 12, 2024" },
-  { emoji: "📚", cat: "Education", title: "Rotaract Reads: Literacy Campaign", excerpt: "Distributing 2,000 books across 15 schools in underserved communities in the Greater Accra Region.", date: "Nov 28, 2024" },
-  { emoji: "🌳", cat: "Environment", title: "Green Ghana: 10,000 Trees Planted", excerpt: "Rotaract clubs across the district united for the national Green Ghana initiative.", date: "Oct 15, 2024" },
+  { image: healthImg, cat: "Health", title: "Free Health Outreach in Tamale", excerpt: "Over 500 community members received free medical screenings during our annual health initiative.", date: "Dec 12, 2024" },
+  { image: literacyImg, cat: "Education", title: "Rotaract Reads: Literacy Campaign", excerpt: "Distributing 2,000 books across 15 schools in underserved communities in the Greater Accra Region.", date: "Nov 28, 2024" },
+  { image: greenImg, cat: "Environment", title: "Green Ghana: 10,000 Trees Planted", excerpt: "Rotaract clubs across the district united for the national Green Ghana initiative.", date: "Oct 15, 2024" },
 ];
 
 const events = [
@@ -51,7 +58,13 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Slider */}
-      <section className="relative bg-blue-900 h-[580px] flex items-center overflow-hidden">
+      <section className="relative h-[580px] flex items-center overflow-hidden">
+        {slides.map((s, i) => (
+          <div key={i} className={`absolute inset-0 transition-opacity duration-700 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
+            <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+            <div className="absolute inset-0 bg-blue-900/70" />
+          </div>
+        ))}
         <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
           <span className="inline-block bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded-full mb-4">{slide.tag}</span>
           <h2 className="font-display font-bold text-white text-4xl md:text-5xl lg:text-[56px] leading-tight max-w-2xl mb-4">{slide.title}</h2>
@@ -61,7 +74,7 @@ const HomePage = () => {
             <Link to={slide.cta2.to} className="border-2 border-white text-white px-6 py-3 rounded hover:bg-white hover:text-blue-900 transition">{slide.cta2.label}</Link>
           </div>
         </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {slides.map((_, i) => (
             <button key={i} onClick={() => setCurrentSlide(i)} className={`w-3 h-3 rounded-full transition ${i === currentSlide ? "bg-yellow-400" : "bg-white/40"}`} />
           ))}
@@ -79,11 +92,7 @@ const HomePage = () => {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[320px_1fr] gap-10 items-center">
           <div className="relative">
-            <div className="w-full h-96 bg-gradient-to-br from-blue-800 to-blue-600 rounded-lg flex items-center justify-center">
-              <div className="w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center">
-                <span className="text-blue-900 font-display font-bold text-2xl">DRR</span>
-              </div>
-            </div>
+            <img src={drrImg} alt="District Rotaract Representative" className="w-full h-96 object-cover rounded-lg" loading="lazy" width={640} height={864} />
             <span className="absolute bottom-4 left-4 bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded">DRR 2024–2025</span>
           </div>
           <div>
@@ -120,8 +129,8 @@ const HomePage = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {highlights.map((h) => (
               <div key={h.title} className="bg-white border border-blue-100 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
-                <div className="h-44 bg-gradient-to-br from-blue-800 to-blue-600 flex items-center justify-center text-5xl relative">
-                  {h.emoji}
+                <div className="h-44 relative">
+                  <img src={h.image} alt={h.title} className="w-full h-full object-cover" loading="lazy" width={800} height={600} />
                   <span className="absolute top-3 left-3 bg-yellow-400 text-blue-900 text-xs font-bold px-2 py-0.5 rounded">{h.cat}</span>
                 </div>
                 <div className="p-5">
