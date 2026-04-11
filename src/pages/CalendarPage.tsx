@@ -1,9 +1,10 @@
 import { useState } from "react";
 import PageHero from "../components/PageHero";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import heroAboutImg from "../assets/hero-about.jpg";
 
-const daysInMonth = 30; // June 2025
-const startDay = 0; // Sunday
+const daysInMonth = 30;
+const startDay = 0;
 const eventDays = [5, 13, 14, 15, 22, 28];
 const today = 10;
 
@@ -21,7 +22,7 @@ const CalendarPage = () => {
 
   return (
     <div>
-      <PageHero breadcrumb="Events" title="District Event Calendar" subtitle="Stay up to date with all district events and activities" />
+      <PageHero breadcrumb="Events" title="District Event Calendar" subtitle="Stay up to date with all district events and activities" image={heroAboutImg} />
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex items-center justify-between mb-6">
