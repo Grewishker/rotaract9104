@@ -1,5 +1,6 @@
 import PageHero from "../components/PageHero";
 import { FaDownload } from "react-icons/fa";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const newsletters = [
   { title: "District Newsletter — Q4 2024", date: "Dec 2024", desc: "Highlights from the quarter including DLAC prep, club achievements, and DRR visits." },
@@ -9,7 +10,7 @@ const newsletters = [
 
 const DistrictNewslettersPage = () => (
   <div>
-    <PageHero breadcrumb="Media → Newsletters" title="District Newsletters" subtitle="Quarterly publications from Rotaract District 9104" />
+    <PageHero breadcrumb="Media → Newsletters" title="District Newsletters" subtitle="Quarterly publications from Rotaract District 9104" image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 space-y-4">
         {newsletters.map((n) => (

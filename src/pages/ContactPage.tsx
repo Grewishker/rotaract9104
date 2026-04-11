@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageHero from "../components/PageHero";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", email: "", club: "", subject: "General Inquiry", message: "" });
@@ -11,7 +12,7 @@ const ContactPage = () => {
 
   return (
     <div>
-      <PageHero breadcrumb="Contact" title="Contact Us" subtitle="Get in touch with Rotaract District 9104" />
+      <PageHero breadcrumb="Contact" title="Contact Us" subtitle="Get in touch with Rotaract District 9104" image={heroAboutImg} />
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_380px] gap-10">
           <form onSubmit={(e) => e.preventDefault()} className="space-y-4">

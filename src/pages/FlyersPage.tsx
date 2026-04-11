@@ -1,5 +1,6 @@
 import PageHero from "../components/PageHero";
 import { FaDownload } from "react-icons/fa";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const flyers = [
   { title: "DLAC 2025 Conference Flyer", date: "Jan 2025" },
@@ -12,7 +13,7 @@ const flyers = [
 
 const FlyersPage = () => (
   <div>
-    <PageHero breadcrumb="Media" title="Event Flyers" subtitle="Download and share flyers for district events and projects" />
+    <PageHero breadcrumb="Media" title="Event Flyers" subtitle="Download and share flyers for district events and projects" image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
         {flyers.map((f) => (
