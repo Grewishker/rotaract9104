@@ -1,12 +1,15 @@
 import PageHero from "../components/PageHero";
 import HighlightBox from "../components/HighlightBox";
+import aboutRotaractImg from "../assets/about-rotaract.jpg";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const AboutRotaractPage = () => (
   <div>
-    <PageHero breadcrumb="About" title="About Rotaract" subtitle="Young leaders building a better world through service, fellowship, and professional development." />
+    <PageHero breadcrumb="About" title="About Rotaract" subtitle="Young leaders building a better world through service, fellowship, and professional development." image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_380px] gap-10">
         <div className="prose max-w-none">
+          <img src={aboutRotaractImg} alt="Rotaract volunteers" className="w-full h-56 object-cover rounded-lg mb-6" loading="lazy" width={800} height={600} />
           <h2 className="font-display text-blue-800 text-2xl font-bold mb-4">History of Rotaract</h2>
           <p className="text-gray-700 mb-4">Rotaract was established in 1968 by Rotary International to bring together young people aged 18 and above to develop leadership skills, promote ethical standards, and advance goodwill and peace around the world.</p>
           <h3 className="font-display text-blue-800 text-xl font-bold mt-8 mb-3">Our Mission</h3>

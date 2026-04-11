@@ -1,5 +1,6 @@
 import PageHero from "../components/PageHero";
 import EventItem from "../components/EventItem";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const notices = [
   { day: "20", month: "Jun", title: "Community Clean-Up Day", description: "All clubs are encouraged to participate in a district-wide environmental clean-up.", tag: "Environment", tagColor: "bg-green-100 text-green-800" },
@@ -10,7 +11,7 @@ const notices = [
 
 const ServiceNoticesPage = () => (
   <div>
-    <PageHero breadcrumb="Projects" title="Community Service Notices" subtitle="Upcoming service opportunities across the district" />
+    <PageHero breadcrumb="Projects" title="Community Service Notices" subtitle="Upcoming service opportunities across the district" image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 space-y-6">
         {notices.map((n) => <EventItem key={n.title} {...n} />)}

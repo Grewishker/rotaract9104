@@ -4,11 +4,18 @@ interface BlogCardProps {
   title: string;
   excerpt: string;
   emoji?: string;
+  image?: string;
 }
 
-const BlogCard = ({ category, date, title, excerpt, emoji = "📰" }: BlogCardProps) => (
+const BlogCard = ({ category, date, title, excerpt, emoji = "📰", image }: BlogCardProps) => (
   <div className="border border-blue-100 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
-    <div className="h-44 bg-gradient-to-br from-blue-800 to-blue-600 flex items-center justify-center text-5xl">{emoji}</div>
+    <div className="h-44 bg-gradient-to-br from-blue-800 to-blue-600 flex items-center justify-center text-5xl relative">
+      {image ? (
+        <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      ) : (
+        emoji
+      )}
+    </div>
     <div className="p-5">
       <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
         <span>{date}</span>

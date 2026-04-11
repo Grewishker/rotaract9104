@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import drrImg from "../assets/drr-portrait.jpg";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const DRRPage = () => (
   <div>
-    <PageHero breadcrumb="About" title="District Rotaract Representative" subtitle="Meet the DRR for the 2024–2025 Rotary Year" />
+    <PageHero breadcrumb="About" title="District Rotaract Representative" subtitle="Meet the DRR for the 2024–2025 Rotary Year" image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[320px_1fr] gap-10 items-start">
         <div className="relative">

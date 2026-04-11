@@ -1,12 +1,15 @@
 import PageHero from "../components/PageHero";
 import HighlightBox from "../components/HighlightBox";
+import aboutRotaryImg from "../assets/about-rotary.jpg";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const AboutRotaryPage = () => (
   <div>
-    <PageHero breadcrumb="About" title="Rotary International" subtitle="A global network of 1.4 million neighbors, friends, and leaders who come together to create positive, lasting change." />
+    <PageHero breadcrumb="About" title="Rotary International" subtitle="A global network of 1.4 million neighbors, friends, and leaders who come together to create positive, lasting change." image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_380px] gap-10">
         <div className="prose max-w-none">
+          <img src={aboutRotaryImg} alt="Rotary meeting" className="w-full h-56 object-cover rounded-lg mb-6" loading="lazy" width={800} height={600} />
           <h2 className="font-display text-blue-800 text-2xl font-bold mb-4">The World's First Service Organization</h2>
           <p className="text-gray-700 mb-4">Rotary International was founded in 1905 by Paul P. Harris in Chicago, Illinois. What began as a small club of business professionals has grown into a global humanitarian movement with over 46,000 clubs worldwide.</p>
           <p className="text-gray-700 mb-4">Rotary brings together dedicated individuals to exchange ideas, build relationships, and take action. Our members are people of action who believe that by working together, we can accomplish great things.</p>

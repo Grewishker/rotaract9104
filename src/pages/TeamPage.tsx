@@ -1,6 +1,7 @@
 import PageHero from "../components/PageHero";
 import TeamCard from "../components/TeamCard";
 import SectionTitle from "../components/SectionTitle";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const officers = [
   { name: "Rtr. [DRR Name]", role: "District Rotaract Representative", initials: "DRR" },
@@ -29,7 +30,7 @@ const zoneCoordinators = [
 
 const TeamPage = () => (
   <div>
-    <PageHero breadcrumb="About" title="District Team" subtitle="The dedicated leaders driving service and growth across District 9104" />
+    <PageHero breadcrumb="About" title="District Team" subtitle="The dedicated leaders driving service and growth across District 9104" image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <SectionTitle title="District Officers" subtitle="Executive leadership of Rotaract District 9104" />

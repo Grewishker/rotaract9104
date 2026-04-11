@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <PageHero breadcrumb="Member Access" title="Member Login" subtitle="Sign in to your Rotaract District 9104 account" />
+      <PageHero breadcrumb="Member Access" title="Member Login" subtitle="Sign in to your Rotaract District 9104 account" image={heroAboutImg} />
       <section className="py-16 bg-white">
         <div className="max-w-sm mx-auto bg-white border border-blue-100 rounded-lg p-10">
           <h2 className="font-display font-bold text-blue-800 text-2xl text-center mb-6">Sign In</h2>

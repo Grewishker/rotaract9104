@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import HighlightBox from "../components/HighlightBox";
+import joinImg from "../assets/join-rotaract.jpg";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const steps = [
   { num: 1, title: "Find a Club", desc: "Use our Club Locator to find a Rotaract club near you." },
@@ -11,9 +13,10 @@ const steps = [
 
 const JoinPage = () => (
   <div>
-    <PageHero breadcrumb="Join Us" title="Join Rotaract" subtitle="Become part of a global movement of young leaders making a difference" />
+    <PageHero breadcrumb="Join Us" title="Join Rotaract" subtitle="Become part of a global movement of young leaders making a difference" image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
+        <img src={joinImg} alt="Join Rotaract" className="w-full h-64 object-cover rounded-lg mb-10" loading="lazy" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {steps.map((s) => (
             <div key={s.num} className="text-center">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageHero from "../components/PageHero";
+import heroAboutImg from "../assets/hero-about.jpg";
 
 const clubs = [
   { name: "RAC University of Ghana, Legon", region: "Greater Accra", charter: 2012, meeting: "Wednesdays, 6:00 PM", venue: "UG Campus" },
@@ -24,7 +25,7 @@ const ClubLocatorPage = () => {
 
   return (
     <div>
-      <PageHero breadcrumb="Contact" title="Club Locator" subtitle="Find a Rotaract club near you" />
+      <PageHero breadcrumb="Contact" title="Club Locator" subtitle="Find a Rotaract club near you" image={heroAboutImg} />
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex gap-3 mb-8 flex-wrap">
