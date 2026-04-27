@@ -1,31 +1,51 @@
 import PageHero from "../components/PageHero";
-import { FaDownload } from "react-icons/fa";
+import { Download } from "lucide-react";
 import heroAboutImg from "../assets/hero-about.jpg";
+import dlacImg from "../assets/dlac-event.jpg";
+import healthImg from "../assets/health-outreach.jpg";
+import careerImg from "../assets/career-expo.jpg";
+import greenImg from "../assets/green-ghana.jpg";
+import trainingImg from "../assets/training.jpg";
+import bloodImg from "../assets/blood-donation.jpg";
 
 const flyers = [
-  { title: "DLAC 2025 Conference Flyer", date: "Jan 2025" },
-  { title: "Health Outreach Flyer — Tamale", date: "Dec 2024" },
-  { title: "Career Expo 2024 Flyer", date: "Oct 2024" },
-  { title: "Green Ghana Initiative Flyer", date: "Sep 2024" },
-  { title: "Club Officers Training Flyer", date: "Aug 2024" },
-  { title: "Blood Donation Drive Flyer", date: "Jul 2024" },
+  { title: "DLAC 2025 Conference Flyer", date: "Jan 2025", image: dlacImg, download: "/flyers/dlac-2025.pdf" },
+  { title: "Health Outreach Flyer — Tamale", date: "Dec 2024", image: healthImg, download: "/flyers/health-outreach.pdf" },
+  { title: "Career Expo 2024 Flyer", date: "Oct 2024", image: careerImg, download: "/flyers/career-expo-2024.pdf" },
+  { title: "Green Ghana Initiative Flyer", date: "Sep 2024", image: greenImg, download: "/flyers/green-ghana-initiative.pdf" },
+  { title: "Club Officers Training Flyer", date: "Aug 2024", image: trainingImg, download: "/flyers/club-officers-training.pdf" },
+  { title: "Blood Donation Drive Flyer", date: "Jul 2024", image: bloodImg, download: "/flyers/blood-donation-drive.pdf" },
 ];
 
 const FlyersPage = () => (
   <div>
-    <PageHero breadcrumb="Media" title="Event Flyers" subtitle="Download and share flyers for district events and projects" image={heroAboutImg} />
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
-        {flyers.map((f) => (
-          <div key={f.title} className="border border-blue-100 rounded-lg p-6 text-center hover:-translate-y-1 hover:shadow-lg transition">
-            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaDownload className="text-blue-800" size={24} />
+    <PageHero breadcrumb="Media" title="Event Flyers" subtitle="Browse, preview, and download flyers for district events" image={heroAboutImg} />
+    <section className="py-16 bg-slate-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid gap-6 md:grid-cols-3">
+          {flyers.map((f) => (
+            <div key={f.title} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+              <div className="relative h-64 overflow-hidden">
+                <img src={f.image} alt={f.title} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent px-4 py-3">
+                  <p className="text-sm font-semibold text-white">{f.title}</p>
+                  <p className="text-xs text-slate-200">{f.date}</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-sm text-slate-600 mb-4">Download the official event flyer to share with your club and community.</p>
+                <a
+                  href={f.download}
+                  download
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark transition"
+                >
+                  <Download size={16} />
+                  Download Flyer
+                </a>
+              </div>
             </div>
-            <h3 className="font-display font-bold text-blue-800 mb-1">{f.title}</h3>
-            <p className="text-gray-500 text-sm mb-3">{f.date}</p>
-            <button className="text-yellow-600 font-semibold text-sm hover:underline">Download PDF →</button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   </div>

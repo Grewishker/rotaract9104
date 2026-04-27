@@ -4,36 +4,50 @@
 
 @layer base {
   :root {
+    /* Rotary Official Color Scheme */
+    /* Azure: #0050a2 */
+    --primary: 203 100% 32%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Royal Blue: #0c3c7c */
+    --primary-dark: 212 85% 25%;
+    
+    /* Sky Blue: #019fcb */
+    --secondary: 194 99% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Cranberry: #c10042 */
+    --accent: 348 95% 38%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Neutral Colors */
     --background: 0 0% 100%;
-    --foreground: 220 17% 18%;
+    --foreground: 212 15% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 220 17% 18%;
+    --card-foreground: 212 15% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 17% 18%;
-    --primary: 224 64% 33%;
-    --primary-foreground: 48 97% 53%;
-    --secondary: 214 95% 93%;
-    --secondary-foreground: 224 64% 33%;
-    --muted: 214 100% 97%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 48 97% 53%;
-    --accent-foreground: 224 64% 33%;
+    --popover-foreground: 212 15% 15%;
+    --muted: 212 10% 92%;
+    --muted-foreground: 212 10% 40%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 68% 90%;
-    --input: 214 68% 90%;
-    --ring: 48 97% 53%;
+    --border: 212 8% 88%;
+    --input: 212 8% 88%;
+    --ring: 203 100% 32%;
     --radius: 0.5rem;
+    
+    /* Sidebar Colors */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 212 15% 15%;
+    --sidebar-primary: 212 85% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 348 95% 38%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 212 8% 88%;
+    --sidebar-ring: 203 100% 32%;
   }
 }
+
 
 @layer base {
   * {

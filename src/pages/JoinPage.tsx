@@ -20,15 +20,15 @@ const JoinPage = () => (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {steps.map((s) => (
             <div key={s.num} className="text-center">
-              <div className="w-14 h-14 rounded-full bg-yellow-400 text-blue-900 font-display font-bold text-xl flex items-center justify-center mx-auto mb-3">{s.num}</div>
-              <h3 className="font-semibold text-blue-800 mb-1">{s.title}</h3>
+              <div className="w-14 h-14 rounded-full bg-accent600 text-primary-dark font-display font-bold text-xl flex items-center justify-center mx-auto mb-3">{s.num}</div>
+              <h3 className="font-semibold text-primary mb-1">{s.title}</h3>
               <p className="text-gray-500 text-sm">{s.desc}</p>
             </div>
           ))}
         </div>
         <div className="grid md:grid-cols-2 gap-10">
           <div>
-            <h2 className="font-display text-blue-800 text-2xl font-bold mb-4">Eligibility</h2>
+            <h2 className="font-display text-primary text-2xl font-bold mb-4">Eligibility</h2>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-6">
               <li>Age 18 and above</li>
               <li>Interest in community service</li>
@@ -36,7 +36,7 @@ const JoinPage = () => (
               <li>Good moral character</li>
               <li>No prior Rotaract membership required</li>
             </ul>
-            <h3 className="font-display text-blue-800 text-xl font-bold mb-3">Membership Dues</h3>
+            <h3 className="font-display text-primary text-xl font-bold mb-3">Membership Dues</h3>
             <p className="text-gray-700">Annual membership dues vary by club, typically ranging from GHS 50–200. This covers club activities, district dues, and RI registration.</p>
           </div>
           <div className="space-y-6">
@@ -50,7 +50,7 @@ const JoinPage = () => (
                 <li>• Access to Rotary grants and resources</li>
               </ul>
             </HighlightBox>
-            <Link to="/contact/club-locator" className="inline-block bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition">Find a Club Near You</Link>
+            <Link to="/contact/club-locator" className="inline-block bg-accent600 text-primary-dark font-semibold px-6 py-3 rounded hover:bg-secondary transition">Find a Club Near You</Link>
           </div>
         </div>
       </div>

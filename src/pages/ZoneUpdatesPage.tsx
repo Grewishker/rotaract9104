@@ -6,9 +6,9 @@ import aboutRotaractImg from "../assets/about-rotaract.jpg";
 import careerImg from "../assets/career-expo.jpg";
 
 const updates = [
-  { category: "Zone Update", date: "Dec 2024", title: "Zone 22 & 22A Leadership Meeting", excerpt: "Highlights from the quarterly zone leadership meeting with updates on membership and grants.", image: heroSlide1 },
-  { category: "Zone Update", date: "Nov 2024", title: "Zone Rotaract Conference Recap", excerpt: "Key takeaways from the Zone 22 Rotaract Conference held in Lagos, Nigeria.", image: aboutRotaractImg },
-  { category: "Zone Update", date: "Oct 2024", title: "Zone Coordinator's Message", excerpt: "Quarterly message from the Zone Rotaract Coordinator on progress and upcoming initiatives.", image: careerImg },
+  { id: "1", category: "Zone Update", date: "Dec 2024", title: "Zone 22 & 22A Leadership Meeting", excerpt: "Highlights from the quarterly zone leadership meeting with updates on membership and grants.", image: heroSlide1 },
+  { id: "2", category: "Zone Update", date: "Nov 2024", title: "Zone Rotaract Conference Recap", excerpt: "Key takeaways from the Zone 22 Rotaract Conference held in Lagos, Nigeria.", image: aboutRotaractImg },
+  { id: "3", category: "Zone Update", date: "Oct 2024", title: "Zone Coordinator's Message", excerpt: "Quarterly message from the Zone Rotaract Coordinator on progress and upcoming initiatives.", image: careerImg },
 ];
 
 const ZoneUpdatesPage = () => (

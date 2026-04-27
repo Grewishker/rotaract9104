@@ -17,14 +17,14 @@ const DonatePage = () => (
         <img src={donateImg} alt="Community giving" className="w-full h-56 object-cover rounded-lg mb-10" loading="lazy" />
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {tiers.map((t) => (
-            <div key={t.name} className={`rounded-lg p-8 text-center relative ${t.featured ? "bg-blue-900 text-white border-2 border-yellow-400" : "bg-white border border-blue-100"}`}>
-              {t.featured && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>}
-              <div className="font-display font-bold text-4xl mb-2 text-yellow-400">{t.amount}</div>
-              <h3 className={`font-display font-bold text-xl mb-4 ${t.featured ? "text-white" : "text-blue-800"}`}>{t.name}</h3>
-              <ul className={`text-sm space-y-2 mb-6 text-left ${t.featured ? "text-blue-200" : "text-gray-600"}`}>
+            <div key={t.name} className={`rounded-lg p-8 text-center relative ${t.featured ? "bg-primary-dark text-white border-2 border-secondary" : "bg-white border border-secondary/10"}`}>
+              {t.featured && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent600 text-primary-dark text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>}
+              <div className="font-display font-bold text-4xl mb-2 text-white">{t.amount}</div>
+              <h3 className={`font-display font-bold text-xl mb-4 ${t.featured ? "text-white" : "text-primary"}`}>{t.name}</h3>
+              <ul className={`text-sm space-y-2 mb-6 text-left ${t.featured ? "text-secondary/50" : "text-gray-600"}`}>
                 {t.features.map((f) => <li key={f}>✓ {f}</li>)}
               </ul>
-              <button className="w-full font-semibold px-6 py-3 rounded transition bg-yellow-400 text-blue-900 hover:bg-yellow-300">Donate Now</button>
+              <button className="w-full font-semibold px-6 py-3 rounded transition bg-accent600 text-primary-dark hover:bg-secondary">Donate Now</button>
             </div>
           ))}
         </div>

@@ -15,6 +15,7 @@ import ClubProjectsPage from "./pages/ClubProjectsPage";
 import ProfDevPage from "./pages/ProfDevPage";
 import ServiceNoticesPage from "./pages/ServiceNoticesPage";
 import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import DRRVisitsPage from "./pages/DRRVisitsPage";
 import FlyersPage from "./pages/FlyersPage";
 import GalleryPage from "./pages/GalleryPage";
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/projects/professional-dev" element={<ProfDevPage />} />
             <Route path="/projects/service-notices" element={<ServiceNoticesPage />} />
             <Route path="/media/blog" element={<BlogPage />} />
+            <Route path="/media/blog/:id" element={<BlogPostPage />} />
             <Route path="/media/drr-visits" element={<DRRVisitsPage />} />
             <Route path="/media/flyers" element={<FlyersPage />} />
             <Route path="/media/gallery" element={<GalleryPage />} />

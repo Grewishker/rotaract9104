@@ -2,30 +2,88 @@ import PageHero from "../components/PageHero";
 import TeamCard from "../components/TeamCard";
 import SectionTitle from "../components/SectionTitle";
 import heroAboutImg from "../assets/hero-about.jpg";
+import drrPortrait from "../assets/drr-portrait.jpg";
+import vdrrPortrait from "../assets/vdrr-portrait.jpg";
+import vdrrAdesaImg from "../assets/TeamImages/VDRR Tetteh Kojo Boampong Adesa.jpeg";
+import secretaryImg from "../assets/TeamImages/Abigail Buwernorkuor Puplampu Secretary.jpeg";
+import treasurerImg from "../assets/TeamImages/Daniel Atta Treasure.jpeg";
+import projectChairImg from "../assets/TeamImages/Emmanuela Boansi Project.jpeg";
+import professionalDevImg from "../assets/TeamImages/Ira Osei Akoto Professional Development.jpeg";
+import publicRelationsImg from "../assets/TeamImages/Azariah Martey-Korley Public relations.jpeg";
+import membershipImg from "../assets/TeamImages/Nathan Larbi Ankamah Public Relation.jpeg";
 
 const officers = [
-  { name: "Rtr. [DRR Name]", role: "District Rotaract Representative", initials: "DRR" },
-  { name: "Rtr. [Name]", role: "Vice DRR", initials: "VD" },
-  { name: "Rtr. [Name]", role: "District Secretary", initials: "DS" },
-  { name: "Rtr. [Name]", role: "District Treasurer", initials: "DT" },
+  {
+    name: "Rtr. [DRR Name]",
+    role: "District Rotaract Representative",
+    initials: "DRR",
+    image: drrPortrait,
+  },
+  {
+    name: "Rtr. Boakye Agyeman",
+    role: "Vice DRR",
+    initials: "VDRR",
+    image: vdrrPortrait,
+  },
+  {
+    name: "Rtr. Tetteh Kojo Boampong Adesa",
+    role: "Vice DRR",
+    initials: "VDRR",
+    image: vdrrAdesaImg,
+  },
+  
+  {
+    name: "Rtr. Abigail Buwernorkuor Puplampu",
+    role: "District Secretary",
+    initials: "DS",
+    image: secretaryImg,
+  },
+  {
+    name: "Rtr. Daniel Atta",
+    role: "District Treasurer",
+    initials: "DT",
+    image: treasurerImg,
+  },
 ];
 
 const chairs = [
-  { name: "Rtr. [Name]", role: "Service Projects Chair", initials: "SP" },
-  { name: "Rtr. [Name]", role: "Professional Dev Chair", initials: "PD" },
-  { name: "Rtr. [Name]", role: "Public Relations Chair", initials: "PR" },
-  { name: "Rtr. [Name]", role: "Membership Chair", initials: "MC" },
+  {
+    name: "Rtr. Emmanuela Boansi",
+    role: "Service Projects Chair",
+    initials: "SP",
+    image: projectChairImg,
+  },
+  {
+    name: "Rtr. Ira Osei Akoto",
+    role: "Professional Dev Chair",
+    initials: "PD",
+    image: professionalDevImg,
+  },
+  {
+    name: "Rtr. Azariah Martey-Korley",
+    role: "Public Relations Chair",
+    initials: "PR",
+    image: publicRelationsImg,
+  },
+  {
+    name: "Rtr. Nathan Larbi Ankamah",
+    role: "Membership Chair",
+    initials: "MC",
+    image: membershipImg,
+  },
 ];
 
-const zoneCoordinators = [
-  { name: "Rtr. [Name]", role: "Greater Accra Zone", initials: "GA" },
-  { name: "Rtr. [Name]", role: "Ashanti Zone", initials: "AS" },
-  { name: "Rtr. [Name]", role: "Western Zone", initials: "WR" },
-  { name: "Rtr. [Name]", role: "Northern Zone", initials: "NR" },
-  { name: "Rtr. [Name]", role: "Eastern Zone", initials: "ER" },
-  { name: "Rtr. [Name]", role: "Central Zone", initials: "CR" },
-  { name: "Rtr. [Name]", role: "Volta Zone", initials: "VR" },
-  { name: "Rtr. [Name]", role: "Bono Zone", initials: "BR" },
+const clusterCoordinators = [
+  { name: "Rtr. [Name]", role: "Cluster A Coordinator", initials: "A" },
+  { name: "Rtr. [Name]", role: "Cluster B Coordinator", initials: "B" },
+  { name: "Rtr. [Name]", role: "Cluster C Coordinator", initials: "C" },
+  { name: "Rtr. [Name]", role: "Cluster D Coordinator", initials: "D" },
+  { name: "Rtr. [Name]", role: "Cluster E Coordinator", initials: "E" },
+  { name: "Rtr. [Name]", role: "Cluster F Coordinator", initials: "F" },
+  { name: "Rtr. [Name]", role: "Cluster G Coordinator", initials: "G" },
+  { name: "Rtr. [Name]", role: "Cluster H Coordinator", initials: "H" },
+  { name: "Rtr. [Name]", role: "Cluster I Coordinator", initials: "I" },
+  { name: "Rtr. [Name]", role: "Cluster J Coordinator", initials: "J" },
 ];
 
 const TeamPage = () => (
@@ -41,9 +99,9 @@ const TeamPage = () => (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {chairs.map((c) => <TeamCard key={c.role} {...c} />)}
         </div>
-        <SectionTitle title="Zone Coordinators" subtitle="Regional representatives ensuring club support and development" />
+        <SectionTitle title="Cluster Coordinators" subtitle="Regional representatives ensuring club support and development" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {zoneCoordinators.map((z) => <TeamCard key={z.role} {...z} />)}
+          {clusterCoordinators.map((z) => <TeamCard key={z.role} {...z} />)}
         </div>
       </div>
     </section>

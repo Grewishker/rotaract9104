@@ -11,12 +11,12 @@ const ProfDevPage = () => (
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_380px] gap-10">
         <div className="prose max-w-none">
           <img src={trainingImg} alt="Leadership training" className="w-full h-56 object-cover rounded-lg mb-6" loading="lazy" />
-          <h2 className="font-display text-blue-800 text-2xl font-bold mb-4">Leadership Training</h2>
+          <h2 className="font-display text-primary text-2xl font-bold mb-4">Leadership Training</h2>
           <p className="text-gray-700 mb-6">Our leadership training programs develop the next generation of community leaders. Through workshops, seminars, and hands-on exercises, Rotaractors gain essential skills in team management, project planning, and public speaking.</p>
-          <h2 className="font-display text-blue-800 text-2xl font-bold mb-4">Mentorship Program</h2>
+          <h2 className="font-display text-primary text-2xl font-bold mb-4">Mentorship Program</h2>
           <p className="text-gray-700 mb-6">Connecting young professionals with experienced Rotarians and industry leaders who provide guidance, career advice, and networking opportunities.</p>
           <img src={careerImg} alt="Career expo" className="w-full h-56 object-cover rounded-lg mb-6" loading="lazy" />
-          <h2 className="font-display text-blue-800 text-2xl font-bold mb-4">Career Expo</h2>
+          <h2 className="font-display text-primary text-2xl font-bold mb-4">Career Expo</h2>
           <p className="text-gray-700">Annual district career expo bringing together employers, entrepreneurs, and professionals to help Rotaractors explore career opportunities and build professional networks.</p>
         </div>
         <div className="space-y-6">
