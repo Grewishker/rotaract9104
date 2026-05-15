@@ -11,8 +11,8 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ id, category, date, title, excerpt, emoji = "📰", image }: BlogCardProps) => (
-  <div className="border border-secondary/10 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
-    <Link to={`/media/blog/${id}`} className="block h-44 bg-gradient-to-br from-primary-dark800 to-secondary600 flex items-center justify-center text-5xl relative">
+  <div className="border border-secondary/10 rounded overflow-hidden hover:-translate-y-1 hover:shadow-lg transition">
+    <Link to={`/media/blog/${id}`} className="h-44 bg-gradient-to-br from-primary-dark800 to-secondary600 flex items-center justify-center text-5xl relative">
       {image ? (
         <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       ) : (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import footerLogo from "@/assets/9104_Rotaract Logo_EN21 (2).png";
+import footerLogo from "@/assets/Club-Rotaract LogoLockup-Template_EN21.png";
 import { THEME } from "@/lib/theme";
 
 const socials = [

@@ -21,7 +21,7 @@ const DonatePage = () => (
               {t.featured && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent600 text-primary-dark text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>}
               <div className="font-display font-bold text-4xl mb-2 text-white">{t.amount}</div>
               <h3 className={`font-display font-bold text-xl mb-4 ${t.featured ? "text-white" : "text-primary"}`}>{t.name}</h3>
-              <ul className={`text-sm space-y-2 mb-6 text-left ${t.featured ? "text-secondary/50" : "text-gray-600"}`}>
+              <ul className={`text-sm space-y-2 mb-6 text-left ${t.featured ? "text-white/90" : "text-gray-600"}`}>
                 {t.features.map((f) => <li key={f}>✓ {f}</li>)}
               </ul>
               <button className="w-full font-semibold px-6 py-3 rounded transition bg-accent600 text-primary-dark hover:bg-secondary">Donate Now</button>

@@ -46,8 +46,8 @@ const ServiceNoticesPage = () => (
 
           <div className="rounded-3xl bg-primary-dark text-white p-8 shadow-sm">
             <h3 className="font-display text-white text-2xl font-bold mb-3">District Service Priorities</h3>
-            <p className="text-gray-600 mb-4">These notices support the district's priority areas for the Rotary year.</p>
-            <ul className="space-y-2 text-sm text-secondary/20">
+            <p className="text-white/80 mb-4">These notices support the district's priority areas for the Rotary year.</p>
+            <ul className="space-y-2 text-sm text-white/90">
               <li>• Health & wellbeing</li>
               <li>• Education & youth empowerment</li>
               <li>• Environmental sustainability</li>

@@ -171,7 +171,7 @@ const AboutRotaryPage = () => (
           ].map((s) => (
             <div key={s.label}>
               <p className="font-heading font-black text-3xl text-primary">{s.value}</p>
-              <p className="text-primary/60 font-body text-sm mt-1">{s.label}</p>
+              <p className="text-primary font-body text-sm mt-1">{s.label}</p>
             </div>
           ))}
         </div>
@@ -182,13 +182,14 @@ const AboutRotaryPage = () => (
     
 
     {/* NEW: How Rotaract Fits */}
-    <section className="py-20 bg-accent600">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 bg-accent600">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/5 to-black/25 pointer-events-none"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-white font-heading font-black text-3xl md:text-4xl mb-4">
             How Rotaract Fits Within Rotary
           </h2>
-          <p className="text-blue/90 font-body">
+          <p className="text-white/90 font-body">
             Rotaract is not a separate organisation — it is a vital part of
             the Rotary family, established by Rotary International to develop
             the next generation of leaders.
@@ -229,14 +230,14 @@ const AboutRotaryPage = () => (
               <h3 className="text-white font-heading font-black text-2xl mb-3">{item.title}</h3>
               <p className="text-white font-body text-sm leading-relaxed">{item.desc}</p>
               {item.highlight && (
-                <span className="inline-block mt-4 text-secondary/70 text-xs font-heading font-bold uppercase tracking-wider">
+                <span className="inline-block mt-4 text-white/80 text-xs font-heading font-bold uppercase tracking-wider">
                   ← You are here
                 </span>
               )}
             </div>
           ))}
         </div>
-        <p className="text-center text-white font-body text-sm mt-8">
+        <p className="text-center text-white/90 font-body text-sm mt-8">
           All three groups are supported and sponsored by Rotary International
           and share the same values of service, integrity, and fellowship.
         </p>

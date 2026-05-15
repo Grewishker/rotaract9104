@@ -225,7 +225,7 @@ const SignatureProjectsPage = () => (
           </Link>
           <Link 
             to="/projects" 
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-white text-white font-medium text-sm hover:bg-white hover:text-primary transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-primary font-medium text-sm hover:bg-gray-100 transition-colors"
           >
             View All Projects
           </Link>

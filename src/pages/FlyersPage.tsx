@@ -24,23 +24,22 @@ const FlyersPage = () => (
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid gap-6 md:grid-cols-3">
           {flyers.map((f) => (
-            <div key={f.title} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+            <div key={f.title} className="overflow-hidden border border-slate-200 bg-transparent shadow-sm">
               <div className="relative h-64 overflow-hidden">
                 <img src={f.image} alt={f.title} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent px-4 py-3">
-                  <p className="text-sm font-semibold text-white">{f.title}</p>
-                  <p className="text-xs text-slate-200">{f.date}</p>
-                </div>
+                
               </div>
-              <div className="p-6">
-                <p className="text-sm text-slate-600 mb-4">Download the official event flyer to share with your club and community.</p>
+              <div className="bg-transparent p-2">
+                  <p className="text-sm font-semibold text-secondary">{f.title}</p>
+                  <p className="text-xs text-secondary/70">{f.date}</p>
+                {/* <p className="text-sm text-slate-600 mb-4">Download the official event flyer to share with your club and community.</p> */}
                 <a
                   href={f.download}
                   download
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark transition"
                 >
                   <Download size={16} />
-                  Download Flyer
+                  Download
                 </a>
               </div>
             </div>

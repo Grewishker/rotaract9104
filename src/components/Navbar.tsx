@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import logo from "@/assets/9104-Rotary-Logo-Cld2x-1-1.png";
+import logo from "@/assets/Rotaract Logo_EN21 (3).png";
 
 const navItems = [
   { label: "Home", to: "/" },
   {
     label: "About", children: [
-      { label: "Rotary International", to: "/about/rotary-international" },
+      { label: "Rotary International", to: "https://www.rotary.org/", external: true },
       { label: "About Rotaract", to: "/about/rotaract" },
-      { label: "About District 9104", to: "/about/district-9104" },
+      { label: "About District 9104", to: "https://rotarydist9104.org/about-district-9104/", external: true },
       { label: "District Rotaract Representative (DRR)", to: "/about/drr" },
       { label: "District Team", to: "/about/team" },
     ]
@@ -29,7 +29,7 @@ const navItems = [
       { label: "Event Flyers", to: "/media/flyers" },
       { label: "Gallery", to: "/media/gallery" },
       { label: "District Newsletters", to: "/media/newsletters/district" },
-      { label: "RI News", to: "/media/newsletters/ri-news" },
+      // { label: "RI News", to: "/media/newsletters/ri-news" },
       // { label: "Zone 22 & 22A Updates", to: "/media/newsletters/zone-updates" },
       // { label: "RI Special Updates", to: "/media/ri-updates" },
       { label: "Videos", to: "/media/videos" },
@@ -68,7 +68,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Rotaract District 9104"
-              className="h-32 w-auto"
+              className="h-12 w-auto"
               loading="eager"
             />
           </Link>
@@ -88,10 +88,16 @@ const Navbar = () => {
                 </button>
                 {openDropdown === item.label && (
                   <div className="absolute top-full left-0 bg-white border-t-4 border-accent600 shadow-lg rounded-b-lg min-w-[240px] py-2 z-50">
-                    {item.children.map((child) => (
-                      <Link key={child.to} to={child.to} className="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary/5 hover:text-primary transition">
-                        {child.label}
-                      </Link>
+                    {item.children.map((child: any) => (
+                      child.external ? (
+                        <a key={child.to} href={child.to} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary/5 hover:text-primary transition">
+                          {child.label}
+                        </a>
+                      ) : (
+                        <Link key={child.to} to={child.to} className="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary/5 hover:text-primary transition">
+                          {child.label}
+                        </Link>
+                      )
                     ))}
                   </div>
                 )}
@@ -132,10 +138,16 @@ const Navbar = () => {
                   </button>
                   {openDropdown === item.label && (
                     <div className="pl-4 space-y-1">
-                      {item.children.map((child) => (
-                        <Link key={child.to} to={child.to} onClick={() => setMobileOpen(false)} className="block text-secondary/50 py-1 hover:text-accent600 text-sm">
-                          {child.label}
-                        </Link>
+                      {item.children.map((child: any) => (
+                        child.external ? (
+                          <a key={child.to} href={child.to} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="block text-white/80 py-1 hover:text-accent600 text-sm">
+                            {child.label}
+                          </a>
+                        ) : (
+                          <Link key={child.to} to={child.to} onClick={() => setMobileOpen(false)} className="block text-white/80 py-1 hover:text-accent600 text-sm">
+                            {child.label}
+                          </Link>
+                        )
                       ))}
                     </div>
                   )}

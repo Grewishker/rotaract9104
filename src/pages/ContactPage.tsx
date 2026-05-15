@@ -47,7 +47,7 @@ const ContactPage = () => {
           <div className="space-y-6">
             <div className="bg-primary-dark text-white border-l-4 border-secondary p-6 rounded-r-lg">
               <h3 className="text-white font-display font-bold text-xl mb-3">Contact Info</h3>
-              <div className="text-secondary/50 text-sm space-y-2">
+              <div className="text-white/90 text-sm space-y-2">
                 <p>📧 info@rotaractd9104.org</p>
                 <p>📱 +233 XX XXX XXXX</p>
                 <p>📍 Accra, Ghana</p>
@@ -56,7 +56,7 @@ const ContactPage = () => {
             </div>
             <div className="flex gap-2">
               {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-primary hover:bg-accent600 hover:text-primary-dark flex items-center justify-center transition text-secondary/70">
+                <a key={i} href="#" className="w-10 h-10 rounded-full bg-primary hover:bg-accent600 hover:text-primary-dark flex items-center justify-center transition text-white/90">
                   <Icon size={16} />
                 </a>
               ))}

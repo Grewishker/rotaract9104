@@ -4,59 +4,199 @@
 
 @layer base {
   :root {
-    /* Rotary Official Color Scheme */
-    /* Azure: #0050a2 */
-    --primary: 203 100% 32%;
+    /* ─────────────────────────────────────────────────────────────────────
+     * ROTARACT DISTRICT 9104 — BRAND COLOR SYSTEM
+     * Primary brand: Rotaract Cranberry  #8B1A4A
+     * Deep cranberry:                    #6b1238  (hover / dark variant)
+     * Blush cranberry:                   #fdf2f6  (light tint backgrounds)
+     * Accent rose:                       #e54d7e  (highlights, gradients)
+     * White:                             #ffffff  (base background)
+     * Rotary Gold (accent600 legacy):    #8B1A4A  → remapped to cranberry
+     * ───────────────────────────────────────────────────────────────────── */
+
+    /* PRIMARY — Rotaract Cranberry (#8B1A4A)
+       Used for: nav, buttons, headings accent, badges, borders
+       HSL: 336° 68% 32%  */
+    --primary:            336 68% 32%;
     --primary-foreground: 0 0% 100%;
-    
-    /* Royal Blue: #0c3c7c */
-    --primary-dark: 212 85% 25%;
-    
-    /* Sky Blue: #019fcb */
-    --secondary: 194 99% 40%;
-    --secondary-foreground: 0 0% 100%;
-    
-    /* Cranberry: #c10042 */
-    --accent: 348 95% 38%;
+
+    /* PRIMARY-DARK — Deep Cranberry (#6b1238)
+       Used for: hover states, footer, dark sections
+       HSL: 336 72% 24%  */
+    --primary-dark:       336 72% 24%;
+
+    /* SECONDARY — Blush / light cranberry tint (#fdf2f6 → token for borders/muted bg)
+       Used for: section backgrounds, card borders, subtle washes
+       HSL: 336 67% 97%  */
+    --secondary:            336 67% 97%;
+    --secondary-foreground: 336 68% 32%;
+
+    /* ACCENT — Rose highlight (#e54d7e)
+       Used for: gradient ends, hover glows, decorative pops
+       HSL: 340 75% 60%  */
+    --accent:            340 75% 60%;
     --accent-foreground: 0 0% 100%;
-    
-    /* Neutral Colors */
-    --background: 0 0% 100%;
-    --foreground: 212 15% 15%;
-    --card: 0 0% 100%;
-    --card-foreground: 212 15% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 212 15% 15%;
-    --muted: 212 10% 92%;
-    --muted-foreground: 212 10% 40%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 212 8% 88%;
-    --input: 212 8% 88%;
-    --ring: 203 100% 32%;
+
+    /* ── Neutral / UI Shell ──────────────────────────────────────────── */
+    --background:            0 0% 100%;
+    --foreground:            336 10% 12%;
+
+    --card:                  0 0% 100%;
+    --card-foreground:       336 10% 12%;
+
+    --popover:               0 0% 100%;
+    --popover-foreground:    336 10% 12%;
+
+    --muted:                 336 20% 95%;
+    --muted-foreground:      336 10% 45%;
+
+    --destructive:           0 84% 60%;
+    --destructive-foreground:0 0% 100%;
+
+    --border:                336 15% 88%;
+    --input:                 336 15% 88%;
+    --ring:                  336 68% 32%;
+
     --radius: 0.5rem;
-    
-    /* Sidebar Colors */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 212 15% 15%;
-    --sidebar-primary: 212 85% 25%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 348 95% 38%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 212 8% 88%;
-    --sidebar-ring: 203 100% 32%;
+
+    /* ── Sidebar ─────────────────────────────────────────────────────── */
+    --sidebar-background:          0 0% 99%;
+    --sidebar-foreground:          336 10% 12%;
+    --sidebar-primary:             336 68% 32%;
+    --sidebar-primary-foreground:  0 0% 100%;
+    --sidebar-accent:              340 75% 60%;
+    --sidebar-accent-foreground:   0 0% 100%;
+    --sidebar-border:              336 15% 88%;
+    --sidebar-ring:                336 68% 32%;
+  }
+
+  /* ── Optional dark mode (preserves cranberry brand) ─────────────────── */
+  .dark {
+    --primary:            336 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark:       336 68% 40%;
+    --secondary:          336 30% 18%;
+    --secondary-foreground:336 60% 85%;
+    --accent:             340 75% 65%;
+    --accent-foreground:  0 0% 100%;
+    --background:         336 15% 8%;
+    --foreground:         336 10% 92%;
+    --card:               336 15% 11%;
+    --card-foreground:    336 10% 92%;
+    --popover:            336 15% 11%;
+    --popover-foreground: 336 10% 92%;
+    --muted:              336 15% 18%;
+    --muted-foreground:   336 10% 60%;
+    --border:             336 15% 20%;
+    --input:              336 15% 20%;
+    --ring:               336 60% 55%;
   }
 }
 
+/* ── Tailwind custom utilities that map to the new tokens ─────────────────── */
+/*
+  How your existing classes now resolve:
+  bg-primary        → Cranberry #8B1A4A
+  bg-primary-dark   → Deep Cranberry #6b1238  (needs tailwind config alias)
+  bg-secondary      → Blush tint  #fdf2f6
+  text-accent600    → see note below
+  border-secondary  → cranberry-tinted border
+*/
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
   }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
+
+  /* Smooth color transitions sitewide so recoloured elements animate cleanly */
+  a, button {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* ── Accent600 compatibility layer ───────────────────────────────────────────
+   Your existing code uses bg-accent600, text-accent600, hover:bg-accent600.
+   Map these to the cranberry brand so old pages update without a find-replace.  */
+@layer utilities {
+  .bg-accent600          { background-color: #8B1A4A; }
+  .text-accent600        { color: #8B1A4A; }
+  .border-accent600      { border-color: #8B1A4A; }
+  .hover\:bg-accent600:hover   { background-color: #8B1A4A; }
+  .hover\:text-accent600:hover { color: #8B1A4A; }
+  .bg-accent700          { background-color: #6b1238; }
+  .hover\:bg-accent700:hover   { background-color: #6b1238; }
+  .ring-accent600        { --tw-ring-color: #8B1A4A; }
+
+  /* Cranberry utility aliases — use these in new pages for clarity */
+  .bg-cranberry          { background-color: #8B1A4A; }
+  .bg-cranberry-dark     { background-color: #6b1238; }
+  .bg-cranberry-blush    { background-color: #fdf2f6; }
+  .bg-cranberry-light    { background-color: #fce7ef; }
+  .text-cranberry        { color: #8B1A4A; }
+  .text-cranberry-dark   { color: #6b1238; }
+  .border-cranberry      { border-color: #8B1A4A; }
+  .ring-cranberry        { --tw-ring-color: #8B1A4A; }
+
+  /* Gradient shorthands */
+  .gradient-cranberry {
+    background: linear-gradient(135deg, #8B1A4A 0%, #e54d7e 100%);
+  }
+  .gradient-cranberry-dark {
+    background: linear-gradient(135deg, #3f0820 0%, #8B1A4A 100%);
+  }
+  .gradient-cranberry-blush {
+    background: linear-gradient(135deg, #8B1A4A 0%, #fdf2f6 100%);
+  }
+
+  /* Cranberry text gradient (for hero headings) */
+  .text-gradient-cranberry {
+    background: linear-gradient(135deg, #8B1A4A, #e54d7e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Cranberry glow shadow — use on cards/buttons for depth */
+  .shadow-cranberry {
+    box-shadow: 0 8px 30px -8px rgba(139, 26, 74, 0.35);
+  }
+  .shadow-cranberry-lg {
+    box-shadow: 0 20px 50px -12px rgba(139, 26, 74, 0.40);
+  }
+
+  /* Cranberry top-border accent — decorative rule on cards/sections */
+  .border-t-cranberry {
+    border-top: 3px solid #8B1A4A;
+  }
+
+  /* Subtle cranberry wash for section backgrounds */
+  .bg-cranberry-wash {
+    background-color: #fdf2f6;
+  }
+}
+
+/* ── Global scrollbar theming ──────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 6px; height: 6px; }
+::-webkit-scrollbar-track    { background: #fdf2f6; }
+::-webkit-scrollbar-thumb    { background: #8B1A4A; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #6b1238; }
+
+/* ── Selection highlight ───────────────────────────────────────────────────── */
+::selection {
+  background-color: #8B1A4A;
+  color: #ffffff;
+}
+
+/* ── Focus ring — keep accessible, brand-coloured ─────────────────────────── */
+:focus-visible {
+  outline: 2px solid #8B1A4A;
+  outline-offset: 3px;
 }
