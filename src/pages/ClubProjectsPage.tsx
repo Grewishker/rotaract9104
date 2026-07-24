@@ -4,7 +4,7 @@ import bloodImg from "../assets/blood-donation.jpg";
 import environmentImg from "../assets/project-environment.jpg";
 import literacyImg from "../assets/rotaract-4.jpg";
 import waterImg from "../assets/clean-water.jpg";
-import heroAboutImg from "../assets/hero-about.jpg";
+import herovideo from "../assets/videos/Rtrvideo1.mp4"
 
 const clubs = [
   { club: "RAC Zongo Community", project: "Zongo Boot Project", desc: "Delivering a 2-week digital skills bootcamp in the Zongo community to empower 50 young people with coding and entrepreneurship training.", image: techImg },
@@ -16,7 +16,14 @@ const clubs = [
 
 const ClubProjectsPage = () => (
   <div>
-    <PageHero breadcrumb="Projects" title="Club Projects" subtitle="Innovative service projects by individual clubs across the district" image={heroAboutImg} />
+    <PageHero 
+    breadcrumb="Projects" 
+    title="Club Projects" 
+    subtitle="Innovative service projects by individual clubs across the district" 
+    video={herovideo}
+        mediaType="video"
+         showOverlay={true}
+         />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
         {clubs.map((c) => (

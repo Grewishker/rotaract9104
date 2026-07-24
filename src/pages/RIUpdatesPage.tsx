@@ -2,7 +2,7 @@ import PageHero from "../components/PageHero";
 import BlogCard from "../components/BlogCard";
 import heroAboutImg from "../assets/hero-about.jpg";
 import heroSlide2 from "../assets/hero-slide-2.jpg";
-import dlacImg from "../assets/dlac-event.jpg";
+import dlacImg from "../assets/dlac-event.png";
 import heroSlide3 from "../assets/hero-slide-3.jpg";
 
 const updates = [

@@ -10,6 +10,7 @@ import AboutRotaractPage from "./pages/AboutRotaractPage";
 import AboutDistrictPage from "./pages/AboutDistrictPage";
 import DRRPage from "./pages/DRRPage";
 import TeamPage from "./pages/TeamPage";
+import PDRRsPage from "./pages/PDRRsPage";
 import SignatureProjectsPage from "./pages/SignatureProjectsPage";
 import ClubProjectsPage from "./pages/ClubProjectsPage";
 import ProfDevPage from "./pages/ProfDevPage";
@@ -19,6 +20,7 @@ import BlogPostPage from "./pages/BlogPostPage";
 import DRRVisitsPage from "./pages/DRRVisitsPage";
 import FlyersPage from "./pages/FlyersPage";
 import GalleryPage from "./pages/GalleryPage";
+import GalleryDetailPage from "./pages/GalleryDetailPage";
 import DistrictNewslettersPage from "./pages/DistrictNewslettersPage";
 import RINewsPage from "./pages/RINewsPage";
 import ZoneUpdatesPage from "./pages/ZoneUpdatesPage";
@@ -32,23 +34,47 @@ import DonatePage from "./pages/DonatePage";
 import JoinPage from "./pages/JoinPage";
 import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
+import LaunchPage from "./components/LaunchPage";
+import ResourcesPage from "./pages/ResourcesPage";
+import { SITE_LIVE } from "./config/site";
+import { useEffect, useState, useCallback } from "react";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
+const App = () => {
+  const [localBypass, setLocalBypass] = useState(false);
+
+  const bypass = useCallback(() => setLocalBypass(true), []);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "l") setLocalBypass(true);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
+  const showLaunch = !SITE_LIVE && !localBypass;
+
+  if (showLaunch) {
+    return <LaunchPage onBypass={bypass} />;
+  }
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
             <Route path="/about/rotary-international" element={<AboutRotaryPage />} />
             <Route path="/about/rotaract" element={<AboutRotaractPage />} />
             <Route path="/about/district-9104" element={<AboutDistrictPage />} />
             <Route path="/about/drr" element={<DRRPage />} />
             <Route path="/about/team" element={<TeamPage />} />
+            <Route path="/about/pdrrs" element={<PDRRsPage />} />
             <Route path="/projects/signature" element={<SignatureProjectsPage />} />
             <Route path="/projects/club-projects" element={<ClubProjectsPage />} />
             <Route path="/projects/professional-dev" element={<ProfDevPage />} />
@@ -58,6 +84,7 @@ const App = () => (
             <Route path="/media/drr-visits" element={<DRRVisitsPage />} />
             <Route path="/media/flyers" element={<FlyersPage />} />
             <Route path="/media/gallery" element={<GalleryPage />} />
+            <Route path="/media/gallery/:id" element={<GalleryDetailPage />} />
             <Route path="/media/newsletters/district" element={<DistrictNewslettersPage />} />
             <Route path="/media/newsletters/ri-news" element={<RINewsPage />} />
             <Route path="/media/newsletters/zone-updates" element={<ZoneUpdatesPage />} />
@@ -66,17 +93,19 @@ const App = () => (
             <Route path="/events/dlac" element={<DLACPage />} />
             <Route path="/events/calendar" element={<CalendarPage />} />
             <Route path="/events/flyers" element={<FlyersPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/contact/club-locator" element={<ClubLocatorPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />
             <Route path="/join" element={<JoinPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

@@ -282,7 +282,7 @@ const BlogPostPage: React.FC = () => {
           
           {/* Article Meta */}
           <div className="flex flex-wrap items-center gap-4 md:gap-6 mb-8 pb-6 border-b border-gray-200">
-            <span className="bg-accent600 text-primary-dark text-xs font-bold px-3 py-1 rounded-full">
+            <span className="bg-accent-600 text-primary-dark text-xs font-bold px-3 py-1 rounded-full">
               {post.category}
             </span>
             <div className="flex items-center gap-2 text-gray-500 text-sm">

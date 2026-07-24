@@ -62,7 +62,7 @@ const posts = [
 
 const BlogPage = () => (
   <div>
-    <PageHero breadcrumb="Media" title="Blog" subtitle="Stories, updates, and reflections from across District 9104" image={heroAboutImg} />
+    <PageHero breadcrumb="Media" title="Blog" subtitle="Stories, updates, and reflections from across District 9104" />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
         {posts.map((p) => <BlogCard key={p.id} {...p} />)}

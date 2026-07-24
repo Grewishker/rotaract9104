@@ -23,12 +23,12 @@ const Footer = () => (
           >
             <img
               src={footerLogo}
-              alt="Rotaract District 9104"
+              alt={THEME.siteName}
               className="h-32 w-auto"
               loading="eager"
             />
           </Link>
-        <p className="text-sm mb-4">Service Above Self — empowering young leaders across Ghana through Rotaract.</p>
+        <p className="text-sm mb-4">{THEME.tagline}</p>
         <div className="flex gap-2">
           {socials.map((s, i) => (
             <a key={i} href={s.href} className="w-8 h-8 rounded-full bg-primary hover:bg-accent600 hover:text-primary-dark flex items-center justify-center transition text-secondary/70">
@@ -60,7 +60,7 @@ const Footer = () => (
       <div>
         <h4 className="text-white font-semibold mb-4">Events & Connect</h4>
         <ul className="space-y-2 text-sm">
-          <li><Link to="/events/dlac" className="hover:text-white transition">DLAC 2025</Link></li>
+          <li><Link to="/events/dlac" className="hover:text-white transition">DLAC 2027</Link></li>
           <li><Link to="/events/calendar" className="hover:text-white transition">Event Calendar</Link></li>
           <li><Link to="/contact/club-locator" className="hover:text-white transition">Club Locator</Link></li>
           <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
@@ -70,7 +70,7 @@ const Footer = () => (
     </div>
     <div className="border-t border-primary">
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-secondary">
-        <span>© 2025 Rotaract District 9104, Ghana. All rights reserved.</span>
+        <span>© {THEME.copyrightYear} {THEME.siteName}, Ghana. All rights reserved.</span>
         <span>Service Above Self • {THEME.name}</span>
       </div>
     </div>

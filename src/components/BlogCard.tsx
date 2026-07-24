@@ -30,7 +30,7 @@ const BlogCard = ({ id, category, date, title, excerpt, emoji = "📰", image }:
       <p className="text-gray-500 text-sm mb-3">{excerpt}</p>
       <Link 
         to={`/media/blog/${id}`}
-        className="text-secondary font-semibold text-sm hover:underline inline-flex items-center gap-1 group"
+        className="text-primary font-semibold text-sm hover:underline inline-flex items-center gap-1 group"
       >
         Read Full Article 
         <span className="group-hover:translate-x-1 transition-transform">→</span>

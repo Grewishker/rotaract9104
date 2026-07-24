@@ -16,7 +16,7 @@ const TeamCard = ({ name, role, initials, detail, image }: TeamCardProps) => (
       )}
     </div>
     <h4 className="font-semibold text-primary text-base md:text-lg">{name}</h4>
-    <p className="text-secondary uppercase text-xs md:text-sm font-semibold tracking-wide">{role}</p>
+    <p className="text-slate-900 uppercase text-xs md:text-sm font-semibold tracking-wide">{role}</p>
     {detail && <p className="text-gray-500 text-sm mt-1">{detail}</p>}
   </div>
 );

@@ -2,15 +2,48 @@ import PageHero from "../components/PageHero";
 import TeamCard from "../components/TeamCard";
 import SectionTitle from "../components/SectionTitle";
 import heroAboutImg from "../assets/hero-about.jpg";
-import drrPortrait from "../assets/drr-portrait.jpg";
-import vdrrPortrait from "../assets/vdrr-portrait.jpg";
-import vdrrAdesaImg from "../assets/TeamImages/VDRR Tetteh Kojo Boampong Adesa.jpeg";
-import secretaryImg from "../assets/TeamImages/Abigail Buwernorkuor Puplampu Secretary.jpeg";
-import treasurerImg from "../assets/TeamImages/Daniel Atta Treasure.jpeg";
-import projectChairImg from "../assets/TeamImages/Emmanuela Boansi Project.jpeg";
-import professionalDevImg from "../assets/TeamImages/Ira Osei Akoto Professional Development.jpeg";
-import publicRelationsImg from "../assets/TeamImages/Azariah Martey-Korley Public relations.jpeg";
-import membershipImg from "../assets/TeamImages/Nathan Larbi Ankamah Public Relation.jpeg";
+import drrPortrait from "../assets/TeamImages/1. DRR Kingdom Kededor Avisseh.jpg";
+import vdrr1Img from "../assets/TeamImages/2. Emmanuel Boakye-Dankwah - VDRR.jpg";
+import vdrr2Img from "../assets/TeamImages/3. Sedinam Edreh - VDRR.jpeg";
+import ipdrrImg from "../assets/TeamImages/4. IPDRR Olive Naa Asheley Addo.jpeg";
+import meChairImg from "../assets/TeamImages/5. BOAKYE AGYEMANG - MONITORING & EVALUATION CHAIR.jpeg";
+import drreImg from "../assets/TeamImages/6. DRRE Abigail Ayamba.jpeg";
+import secretaryImg from "../assets/TeamImages/7. Sky-Margaret Ocloo - Secreatary.jpeg";
+import deputySecretaryImg from "../assets/TeamImages/8. Showers Carr Obeng - Deputy Secretary.jpeg";
+import treasurerImg from "../assets/TeamImages/9. Idriss Abiodun Mawuli Zuberu DISTRICT TREASURER.jpeg";
+import deputyTreasurerImg from "../assets/TeamImages/10. Jamila Musah - Deputy Treasurer.jpeg";
+import adminImg from "../assets/TeamImages/11. Kelvin Amoako - DISTRICT ADMIN.jpeg";
+import deputyAdminImg from "../assets/TeamImages/12. ZARA DOE - DEPUTY ADMIN.jpg";
+import coordinatorImg from "../assets/TeamImages/13. Olivia Quaye - DIST COORDINATOR.jpeg";
+import deputyCoordinatorImg from "../assets/TeamImages/14. Courage Edudji Soglo - Deputy Coordinator.jpeg";
+import membershipDirImg from "../assets/TeamImages/15. Ohenewaa Damptey- Membership Director.jpg";
+import deputyMembershipImg from "../assets/TeamImages/16. Samuel Boateng Danquah- Dep. Membership.jpeg";
+import projectsDirImg from "../assets/TeamImages/18. Senoo Senami - Projects Director.jpg";
+import deputyProjectsImg from "../assets/TeamImages/19. Clinton Boateng - DEPUTY PROJECTS.jpg";
+import professionalDevImg from "../assets/TeamImages/20. Ira Osei Akoto - Professional Development Director.jpeg";
+import deputyProfessionalImg from "../assets/TeamImages/21. Kumiwaa Boahene - Deputy Professional Director.jpg";
+import publicImageDirImg from "../assets/TeamImages/22. Ebenaita Norbu - Public Image DIRECTOR.jpg";
+import deputyPublicImageImg from "../assets/TeamImages/23. Kekeli Aryee - DEPUTY Public Image DIRECTOR.jpeg";
+import interactDirImg from "../assets/TeamImages/24. Baaba Adu Mensah - Interact Director.jpeg";
+import deputyInteractImg from "../assets/TeamImages/25. Sarah Anane - Deputy Interact.jpg";
+import intlRelationsImg from "../assets/TeamImages/26. Ebenezer kermah - INTERNATIONAL RELATIONS.jpg";
+import deputyIntlRelationsImg from "../assets/TeamImages/27. Elsie Atobra DEPUTY INTERNATIONAL RELATIONS-2.jpg";
+import rotaryFoundationImg from "../assets/TeamImages/27C Vanessa Dela Anyadi-Odzawo - Rotary Foundation Chair.png";
+import deputyRotaryFoundationImg from "../assets/TeamImages/27D Hillary Philipa Nyarko - Deputy Rotary Foundation Chair.jpg.jpg";
+// Assistant District Rotaract Representative (ADRRs)
+import adrrAImg from "../assets/TeamImages/33. Elizabeth Ahiagba ADRR CLUSTER A.jpeg";
+import adrrBImg from "../assets/TeamImages/29. Victory-Emmanuel Quarshie- ADRR CLUSTER B.jpg";
+import adrrCImg from "../assets/TeamImages/30. Lawrence Wilson - ADRR CLUSTER C.jpeg";
+import adrrDImg from "../assets/TeamImages/31. Mavis Addo - ADRR CLUSTER D.jpg";
+import adrrEImg from "../assets/TeamImages/32. Augustus Darko Akuffo  ADRR CLUSTER E.jpeg";
+import adrrFImg from "../assets/TeamImages/38. Dennis Jackson ADRR Cluster F.jpeg";
+import adrrGImg from "../assets/TeamImages/34. Emmanuel Agyei  ADRR CLUSTER G.jpeg";
+import adrrHImg from "../assets/TeamImages/35. Mavis Ezuh - ADRR CLUSTER H.jpeg";
+import adrrIImg from "../assets/TeamImages/36. Lordina Asantewaa - ADRR CLUSTER I.jpeg";
+import adrrJImg from "../assets/TeamImages/37. Raymond Nwiiri - ADRR CLUSTER J.jpg";
+import heroimage1 from "../assets/heroImages/HANDOVER-100.jpg"
+import heroimage2 from "../assets/heroImages/HANDOVER-64.jpg"
+import heroimage3 from "../assets/heroImages/HANDOVER-80.jpg"
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -41,75 +74,194 @@ const AnimatedSection = ({ children, className }) => {
 
 const officers = [
   {
-    name: "Rtr. [DRR Name]",
-    role: "District Rotaract Representative",
+    name: "Rtr. Kingdom Kededor Avisseh",
+    role: "District Rotaract Representative (DRR)",
     initials: "DRR",
     image: drrPortrait,
   },
   {
-    name: "Rtr. Boakye Agyeman",
-    role: "Vice DRR",
-    initials: "VDRR",
-    image: vdrrPortrait,
+    name: "Rtr. Olive Naa Asheley Addo",
+    role: "Immediate Past DRR (IPDRR)",
+    initials: "IPDRR",
+    image: ipdrrImg,
   },
   {
-    name: "Rtr. Tetteh Kojo Boampong Adesa",
-    role: "Vice DRR",
-    initials: "VDRR",
-    image: vdrrAdesaImg,
+    name: "Rtr. Abigail Ayamba",
+    role: "DRR Elect (DRRE)",
+    initials: "DRRE",
+    image: drreImg,
   },
   {
-    name: "Rtr. Abigail Buwernorkuor Puplampu",
+    name: "Rtr. Boakye Agyemang",
+    role: "Monitoring & Evaluation Chair",
+    initials: "M&E",
+    image: meChairImg,
+  },
+  {
+    name: "Rtr. Emmanuel Boakye-Dankwah",
+    role: "Vice District Rotaract Representative (VDRR)",
+    initials: "VDRR",
+    image: vdrr1Img,
+  },
+  {
+    name: "Rtr. Sedinam Edreh",
+    role: "Vice District Rotaract Representative (VDRR)",
+    initials: "VDRR",
+    image: vdrr2Img,
+  },
+  
+  {
+    name: "Rtr. Sky-Margaret Ocloo",
     role: "District Secretary",
     initials: "DS",
     image: secretaryImg,
   },
   {
-    name: "Rtr. Daniel Atta",
+    name: "Rtr. Showers Carr Obeng",
+    role: "Deputy District Secretary",
+    initials: "DDS",
+    image: deputySecretaryImg,
+  },
+  {
+    name: "Rtr. Idriss Abiodun Mawuli Zuberu",
     role: "District Treasurer",
     initials: "DT",
     image: treasurerImg,
   },
+  {
+    name: "Rtr. Jamila Musah",
+    role: "Deputy District Treasurer",
+    initials: "DDT",
+    image: deputyTreasurerImg,
+  },
+  {
+    name: "Rtr. Kelvin Amoako",
+    role: "District Administrator",
+    initials: "DA",
+    image: adminImg,
+  },
+  {
+    name: "Rtr. Zara Doe",
+    role: "Deputy District Administrator",
+    initials: "DDA",
+    image: deputyAdminImg,
+  },
+  {
+    name: "Rtr. Olivia Quaye",
+    role: "District Coordinator",
+    initials: "DC",
+    image: coordinatorImg,
+  },
+  {
+    name: "Rtr. Courage Edudji Soglo",
+    role: "Deputy District Coordinator",
+    initials: "DDC",
+    image: deputyCoordinatorImg,
+  },
 ];
 
 const chairs = [
+  
+  
   {
-    name: "Rtr. Emmanuela Boansi",
-    role: "Service Projects Chair",
-    initials: "SP",
-    image: projectChairImg,
+    name: "Rtr. Ohenewaa Damptey",
+    role: "Membership Director",
+    initials: "MD",
+    image: membershipDirImg,
+  },
+  {
+    name: "Rtr. Samuel Boateng Danquah",
+    role: "Deputy Membership Director",
+    initials: "DMD",
+    image: deputyMembershipImg,
+  },
+  {
+    name: "Rtr. Senoo Senami",
+    role: "Projects Director",
+    initials: "PDir",
+    image: projectsDirImg,
+  },
+  {
+    name: "Rtr. Clinton Boateng",
+    role: "Deputy Projects Director",
+    initials: "DPDir",
+    image: deputyProjectsImg,
   },
   {
     name: "Rtr. Ira Osei Akoto",
-    role: "Professional Dev Chair",
-    initials: "PD",
+    role: "Professional Development Director",
+    initials: "PDD",
     image: professionalDevImg,
   },
   {
-    name: "Rtr. Azariah Martey-Korley",
-    role: "Public Relations Chair",
-    initials: "PR",
-    image: publicRelationsImg,
+    name: "Rtr. Kumiwaa Boahene",
+    role: "Deputy Professional Development Director",
+    initials: "DPDD",
+    image: deputyProfessionalImg,
   },
   {
-    name: "Rtr. Nathan Larbi Ankamah",
-    role: "Membership Chair",
-    initials: "MC",
-    image: membershipImg,
+    name: "Rtr. Ebenaita Norbu",
+    role: "Public Image Director",
+    initials: "PID",
+    image: publicImageDirImg,
+  },
+  {
+    name: "Rtr. Kekeli Aryee",
+    role: "Deputy Public Image Director",
+    initials: "DPID",
+    image: deputyPublicImageImg,
+  },
+  {
+    name: "Rtr. Baaba Adu Mensah",
+    role: "Interact Director",
+    initials: "ID",
+    image: interactDirImg,
+  },
+  {
+    name: "Rtr. Sarah Anane",
+    role: "Deputy Interact Director",
+    initials: "DID",
+    image: deputyInteractImg,
+  },
+  {
+    name: "Rtr. Ebenezer Kermah",
+    role: "International Relations Director",
+    initials: "IRD",
+    image: intlRelationsImg,
+  },
+  {
+    name: "Rtr. Elsie Atobra",
+    role: "Deputy International Relations Director",
+    initials: "DIRD",
+    image: deputyIntlRelationsImg,
+  },
+  {
+    name: "Rtr. Vanessa Dela Anyadi-Odzawo",
+    role: "Rotary Foundation Chair",
+    initials: "RFC",
+    image: rotaryFoundationImg,
+  },
+  {
+    name: "Rtr. Hillary Philipa Nyarko",
+    role: "Deputy Rotary Foundation Chair",
+    initials: "DRFC",
+    image: deputyRotaryFoundationImg,
   },
 ];
 
 const clusterCoordinators = [
-  { name: "Rtr. [Name]", role: "Cluster A Coordinator", initials: "A" },
-  { name: "Rtr. [Name]", role: "Cluster B Coordinator", initials: "B" },
-  { name: "Rtr. [Name]", role: "Cluster C Coordinator", initials: "C" },
-  { name: "Rtr. [Name]", role: "Cluster D Coordinator", initials: "D" },
-  { name: "Rtr. [Name]", role: "Cluster E Coordinator", initials: "E" },
-  { name: "Rtr. [Name]", role: "Cluster F Coordinator", initials: "F" },
-  { name: "Rtr. [Name]", role: "Cluster G Coordinator", initials: "G" },
-  { name: "Rtr. [Name]", role: "Cluster H Coordinator", initials: "H" },
-  { name: "Rtr. [Name]", role: "Cluster I Coordinator", initials: "I" },
-  { name: "Rtr. [Name]", role: "Cluster J Coordinator", initials: "J" },
+  // Note: Cluster A image not available in the provided folder
+  { name: "Rtr. Elizabeth Ahiagba", role: "ADRR Cluster A ", initials: "A", image: adrrAImg },
+  { name: "Rtr. Victory-Emmanuel Quarshie", role: "ADRR Cluster B ", initials: "B", image: adrrBImg },
+  { name: "Rtr. Lawrence Wilson", role: "ADRR Cluster C ", initials: "C", image: adrrCImg },
+  { name: "Rtr. Mavis Addo", role: "ADRR Cluster D ", initials: "D", image: adrrDImg },
+  { name: "Rtr. Augustus Darko Akuffo", role: "ADRR Cluster E ", initials: "E", image: adrrEImg },
+  { name: "Rtr. Dennis Jackson", role: "ADRR Cluster F ", initials: "F", image: adrrFImg },
+  { name: "Rtr. Emmanuel Agyei", role: "ADRR Cluster G ", initials: "G", image: adrrGImg },
+  { name: "Rtr. Mavis Ezuh", role: "ADRR Cluster H ", initials: "H", image: adrrHImg },
+  // Cluster I and J - images not available in the provided folder
+  { name: "Rtr. Lordina Asantewaa", role: "ADRR Cluster I ", initials: "I", image: adrrIImg },
+  { name: "Rtr.    Nwiiri", role: "ADRR Cluster J ", initials: "J", image: adrrJImg },
 ];
 
 const TeamPage = () => (
@@ -121,8 +273,12 @@ const TeamPage = () => (
     <PageHero 
       breadcrumb="About" 
       title="District Team" 
-      subtitle="The dedicated leaders driving service and growth across District 9104" 
-      image={heroAboutImg} 
+      subtitle="The dedicated leaders creating lasting imapact across District 9104" 
+      image={[
+        heroimage1,
+        heroimage2,
+        heroimage3
+      ]}
     />
     
     <section className="py-16 bg-gradient-to-b from-white to-gray-50">
@@ -179,7 +335,7 @@ const TeamPage = () => (
           ))}
         </AnimatedSection>
 
-        {/* Cluster Coordinators */}
+        {/* Assistant District Rotaract Representative */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -187,8 +343,8 @@ const TeamPage = () => (
           transition={{ duration: 0.6 }}
         >
           <SectionTitle 
-            title="Cluster Coordinators" 
-            subtitle="Regional representatives ensuring club support and development" 
+            title="Assistant District Rotaract Representative" 
+            subtitle="Cluster Coordinators ensuring club support and development" 
           />
         </motion.div>
         

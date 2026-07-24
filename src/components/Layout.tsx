@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import TopBar from "./TopBar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import PageMetadata from "./PageMetadata";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
@@ -10,6 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <PageMetadata />
       <TopBar />
       <Navbar />
       <main className="flex-1">{children}</main>

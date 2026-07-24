@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
-import drrImg from "../assets/drr-portrait.jpg";
-import vdrrImg from "../assets/vdrr-portrait.jpg";
+import drrImg from "../assets/TeamImages/1. DRR Kingdom Kededor Avisseh.jpg";
+// import vdrrImg from "../assets/TeamImages/2. Emmanuel Boakye-Dankwah - VDRR.jpg";
+import heroimage1 from "../assets/heroImages/HANDOVER-100.jpg"
+import heroimage2 from "../assets/heroImages/HANDOVER-64.jpg"
+import heroimage3 from "../assets/heroImages/HANDOVER-80.jpg"
 import heroAboutImg from "../assets/hero-about.jpg";
 import { THEME } from "@/lib/theme";
 import { motion } from "framer-motion";
@@ -42,8 +45,12 @@ const DRRPage = () => (
     <PageHero 
       breadcrumb="About" 
       title="District Rotaract Representative" 
-      subtitle="Meet the DRR and VDRR for the 2025-2026 Rotary Year" 
-      image={heroAboutImg} 
+      // image={heroAboutImg} 
+      image={[
+        heroimage1,
+        heroimage2,
+        heroimage3
+      ]}
     />
     
     {/* DRR Section */}
@@ -73,7 +80,7 @@ const DRRPage = () => (
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                DRR 2025-2026
+                DRR 2026-27
               </motion.span>
             </div>
           </motion.div>
@@ -89,7 +96,7 @@ const DRRPage = () => (
               className="font-display font-bold text-primary text-3xl mb-4"
               variants={fadeInUp}
             >
-              Rtr. [DRR Name]
+              Rtr. Kingdom Kededor Avisseh
             </motion.h2>
             <motion.blockquote 
               className="border-l-4 border-accent600 pl-4 italic text-gray-600 mb-6"
@@ -156,7 +163,7 @@ const DRRPage = () => (
       </div>
     </section>
 
-    {/* VDRR Section */}
+    {/* VDRR Section
     <section className="py-16 bg-white border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection className="grid md:grid-cols-[320px_1fr] gap-10 items-start">
@@ -183,7 +190,7 @@ const DRRPage = () => (
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                VDRR 2025-2026
+                VDRR 2026-27
               </motion.span>
             </div>
           </motion.div>
@@ -199,7 +206,7 @@ const DRRPage = () => (
               className="font-display font-bold text-primary text-3xl mb-4"
               variants={fadeInUp}
             >
-              Rtr. [VDRR Name]
+              Rtr. Emmanuel Boakye-Dankwah
             </motion.h2>
             <motion.blockquote 
               className="border-l-4 border-accent600 pl-4 italic text-gray-600 mb-6"
@@ -264,7 +271,7 @@ const DRRPage = () => (
           </motion.div>
         </AnimatedSection>
       </div>
-    </section>
+    </section> */}
 
     {/* CTA Section */}
     <section className="py-12 bg-gradient-to-r from-primary-dark via-primary to-primary-dark relative overflow-hidden">

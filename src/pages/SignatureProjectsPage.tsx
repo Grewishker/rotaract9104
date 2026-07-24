@@ -6,11 +6,13 @@ import literacyImg from "../assets/education.jpg";
 import greenImg from "../assets/pillar-6.jpg";
 import waterImg from "../assets/clean-water.jpg";
 import heroAboutImg from "../assets/hero-about.jpg";
+import herovideo from "../assets/videos/Rtrvideo1.mp4"
 import { ArrowRight, Heart, BookOpen, Leaf, Droplets, Users, Target, TrendingUp } from "lucide-react";
 
 const projects = [
   { 
     title: "Free Health Outreach", 
+    slug: "free-health-outreach",
     desc: "District-wide health screening and medical support for underserved communities across all 10 regions of Ghana.", 
     tags: ["Health", "Community"], 
     image: healthImg,
@@ -20,6 +22,7 @@ const projects = [
   },
   { 
     title: "Rotaract Reads", 
+    slug: "rotaract-reads",
     desc: "Literacy campaign distributing books and reading resources to schools, with mentorship and reading sessions.", 
     tags: ["Education", "Literacy"], 
     image: literacyImg,
@@ -29,6 +32,7 @@ const projects = [
   },
   { 
     title: "Green Ghana Initiative", 
+    slug: "green-ghana-initiative",
     desc: "Environmental sustainability project planting 10,000+ trees annually across Ghana in partnership with national agencies.", 
     tags: ["Environment", "Sustainability"], 
     image: greenImg,
@@ -38,6 +42,7 @@ const projects = [
   },
   { 
     title: "Water & Sanitation", 
+    slug: "water-sanitation",
     desc: "Providing clean water infrastructure and sanitation facilities to rural communities in Northern and Volta Regions.", 
     tags: ["WASH", "Infrastructure"], 
     image: waterImg,
@@ -51,7 +56,7 @@ const impactStats = [
   { value: "50,000+", label: "Lives Impacted" },
   { value: "200+", label: "Communities Reached" },
   { value: "1,000+", label: "Volunteers Mobilized" },
-  { value: "₵2M+", label: "Resources Invested" },
+  // { value: "₵2M+", label: "Resources Invested" },
 ];
 
 const SignatureProjectsPage = () => (
@@ -61,13 +66,16 @@ const SignatureProjectsPage = () => (
       breadcrumb="Projects" 
       title="Signature District Projects" 
       subtitle="Flagship initiatives driving lasting impact across Ghana" 
-      image={heroAboutImg} 
+      // image={heroAboutImg} 
+      video={herovideo}
+        mediaType="video"
+         showOverlay={true}
     />
 
     {/* Impact Stats Strip */}
     <section className="bg-secondary/5 py-12">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
           {impactStats.map((s) => (
             <div key={s.label}>
               <p className="text-3xl font-bold text-primary">{s.value}</p>
@@ -83,10 +91,11 @@ const SignatureProjectsPage = () => (
       <div className="max-w-6xl mx-auto px-4">
         {/* Original projects grid - enhanced */}
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map(({ icon: Icon, title, desc, tags, image, stats, color }) => (
+          {projects.map(({ icon: Icon, title, desc, tags, image, stats, color, slug }) => (
             <div 
+              id={slug}
               key={title} 
-              className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition-all group"
+              className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition-all group scroll-mt-24"
             >
               <div className="relative h-52 overflow-hidden">
                 <img 
@@ -133,12 +142,13 @@ const SignatureProjectsPage = () => (
                       </span>
                     ))}
                   </div>
-                  <Link 
-                    to={`/projects/${title.toLowerCase().replace(/\s+/g, '-')}`}
+                  {/* <Link 
+                    to={`/projects/signature#${slug}`}
                     className="text-primary hover:text-secondary transition-colors"
+                    aria-label={`View details for ${title}`}
                   >
                     <ArrowRight size={18} />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -194,7 +204,7 @@ const SignatureProjectsPage = () => (
             </HighlightBox>
             <div className="bg-primary rounded-lg p-6 text-white">
               <h4 className="font-semibold text-lg mb-2">Support Our Projects</h4>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-white text-sm mb-4">
                 Partner with us to amplify our impact across Ghana.
               </p>
               <Link 

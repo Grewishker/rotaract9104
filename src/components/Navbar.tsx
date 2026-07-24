@@ -2,15 +2,17 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import logo from "@/assets/Rotaract Logo_EN21 (3).png";
+import { THEME } from "@/lib/theme";
 
 const navItems = [
   { label: "Home", to: "/" },
   {
     label: "About", children: [
       { label: "Rotary International", to: "https://www.rotary.org/", external: true },
-      { label: "About Rotaract", to: "/about/rotaract" },
       { label: "About District 9104", to: "https://rotarydist9104.org/about-district-9104/", external: true },
+      { label: "About Rotaract", to: "/about/rotaract" },
       { label: "District Rotaract Representative (DRR)", to: "/about/drr" },
+      { label: "PDRRs", to: "/about/pdrrs" },
       { label: "District Team", to: "/about/team" },
     ]
   },
@@ -67,7 +69,7 @@ const Navbar = () => {
           >
             <img
               src={logo}
-              alt="Rotaract District 9104"
+              alt={THEME.siteName}
               className="h-12 w-auto"
               loading="eager"
             />
