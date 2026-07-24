@@ -787,11 +787,10 @@ const HomePage = () => {
               key={i}
               className="relative flex-1 min-w-[200px] h-56 md:h-72 overflow-hidden group cursor-pointer"
               whileHover={{ flex: 2.5 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.05  }}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05, duration: 0.6 }}
             >
               <img src={img.src} alt={img.caption} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 bg-[#8B1A4A]/0 group-hover:bg-[#8B1A4A]/60 transition-colors duration-400" />
