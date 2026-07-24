@@ -85,7 +85,7 @@ const PageHero = ({
                   key={`${src}-${index}`}
                   src={src}
                   alt={imageAlt || ''}
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1200ms] ease-out ${
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1200ms ease-out ${
                     index === activeImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
                   }`}
                 />
