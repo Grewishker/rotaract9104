@@ -14,7 +14,7 @@ const posts = [
     id: "district-health-outreach-2024",
     category: "Service", 
     date: "Dec 15, 2024", 
-    title: "District Health Outreach Reaches 500+ Beneficiaries", 
+    title: "District Health Outreach Reaches 200+ Beneficiaries", 
     excerpt: "The annual Free Health Outreach in Tamale provided free screenings and medication to over 500 community members.", 
     image: healthImg 
   },

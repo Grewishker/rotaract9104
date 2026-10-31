@@ -24,7 +24,7 @@ const Footer = () => (
             <img
               src={footerLogo}
               alt={THEME.siteName}
-              className="h-32 w-auto"
+              className="h-20 w-auto"
               loading="eager"
             />
           </Link>

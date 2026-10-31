@@ -18,6 +18,16 @@ const allNewsletters = [
     embedUrl: "https://heyzine.com/flip-book/a302166fdb.html",
     thumbnail: null,
   },
+  {
+    id: "september-2026",
+    title: "Pages of Impact - 2nd Edition",
+    date: "September 2026",
+    desc: "Second edition featuring district projects and member spotlights.",
+    fileSize: "Flip-book",
+    isLatest: false,
+    embedUrl: "https://heyzine.com/flip-book/0b4c6f86f4.html",
+    thumbnail: null,
+  }
   // Future editions will be added here with their own embed URLs
   // {
   //   id: "aug-2026",

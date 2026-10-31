@@ -9,6 +9,7 @@ import type { GalleryEvent } from "../data/galleryData";
 import heroimage1 from "../assets/heroImages/HANDOVER-100.jpg"
 import heroimage2 from "../assets/heroImages/HANDOVER-64.jpg"
 import heroimage3 from "../assets/heroImages/HANDOVER-80.jpg"
+import Lightbox from "../components/Lightbox";
 
 // ─── Hook: mount-aware intersection observer ──────────────────────────────────
 function useIsVisible(rootMargin = "200px") {
@@ -62,9 +63,11 @@ function usePreloadAdjacentImages(images: string[], scrollIndex: number) {
 const GalleryCarousel = memo(function GalleryCarousel({
   event,
   isFirstEvent = false,
+  onImageClick,
 }: {
   event: GalleryEvent;
   isFirstEvent?: boolean;
+  onImageClick: (images: string[], index: number) => void;
 }) {
   // Only show 7 images in carousel
   const carouselImages = getCarouselImages(event);
@@ -108,6 +111,11 @@ const GalleryCarousel = memo(function GalleryCarousel({
 
   const handleMouseEnter = useCallback(() => setIsPaused(true), []);
   const handleMouseLeave = useCallback(() => setIsPaused(false), []);
+
+  // Helper function to find the actual index in the full images array
+  const getFullImageIndex = useCallback((carouselImage: string) => {
+    return event.images.findIndex(img => img === carouselImage);
+  }, [event.images]);
 
   return (
     <div ref={wrapperRef} className="mb-16 last:mb-0">
@@ -164,23 +172,27 @@ const GalleryCarousel = memo(function GalleryCarousel({
             className="flex gap-4 overflow-x-auto pb-4 gallery-scrollbar-hide"
             onScroll={handleScroll}
           >
-            {carouselImages.map((image, index) => {
-              const isLCP = isFirstEvent && index === 0;
+            {carouselImages.map((image, carouselIndex) => {
+              const isLCP = isFirstEvent && carouselIndex === 0;
+              // Find the actual index in the full images array
+              const fullIndex = getFullImageIndex(image);
+              
               return (
                 <div
                   key={image}
                   className="flex-shrink-0 w-64 md:w-80 lg:w-96 group/item cursor-pointer"
+                  onClick={() => onImageClick(event.images, fullIndex)}
                 >
                   <div className="relative h-56 md:h-64 lg:h-72 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
                     <OptimizedImage
                       src={image}
-                      alt={`${event.title} — photo ${index + 1} of ${event.images.length}`}
+                      alt={`${event.title} — photo ${carouselIndex + 1} of ${event.images.length}`}
                       priority={isLCP}
                       className="gallery-img"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <span className="text-white text-sm font-medium">
-                        {index + 1} / {event.images.length}
+                        {fullIndex + 1} / {event.images.length}
                       </span>
                     </div>
                   </div>
@@ -198,18 +210,27 @@ const GalleryCarousel = memo(function GalleryCarousel({
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 const GalleryPage = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState<string[]>([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const handleImageClick = (images: string[], index: number) => {
+    setLightboxImages(images);
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <div>
-     <PageHero 
-      breadcrumb="About" 
-      title="District Rotaract Representative" 
-      // image={heroAboutImg} 
-      image={[
-        heroimage1,
-        heroimage2,
-        heroimage3
-      ]}
-    />
+      <PageHero 
+        breadcrumb="About" 
+        title="District Rotaract Representative" 
+        image={[
+          heroimage1,
+          heroimage2,
+          heroimage3
+        ]}
+      />
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -240,10 +261,19 @@ const GalleryPage = () => {
               key={event.id}
               event={event}
               isFirstEvent={index === 0}
+              onImageClick={handleImageClick}
             />
           ))}
         </div>
       </section>
+
+      {/* Lightbox */}
+      <Lightbox
+        images={lightboxImages}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
 
       <style>{`
         .gallery-scrollbar-hide {

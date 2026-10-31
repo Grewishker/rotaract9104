@@ -29,22 +29,22 @@ const pdrrs: PDRRItem[] = [
     email: "samuel.owusu.darko@gmail.com",
     image: samuelImg,
   },
-  {
-    name: "Regina",
-    year: "2016/2017 Rotary Year",
+  { 
+    name: "Regina Dzasimatu",
+    year: "2016-17 Rotary Year",
     district: "Rotary District 9102",
     image: reginaImg,
   },
   {
     name: "Andrews Ofosuhene",
     year: "2018-19 Rotary Year",
-    district: "District 9104",
+    district: "District 9102",
     image: andrewsImg,
   },
   {
     name: "Cyril Brown",
-    year: "2021-22 Rotary Year",
-    district: "District 9104",
+    year: "2020-21 Rotary Year",
+    district: "District 9102",
     image: cyrilImg,
   },
   {

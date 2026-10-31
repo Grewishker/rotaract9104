@@ -62,6 +62,35 @@ const PageMetadata = ({ title, description, image, path }: PageMetadataProps) =>
     if (twitterImage) {
       twitterImage.setAttribute("content", ogImage);
     }
+
+    // Canonical link
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    const canonicalHref = `${window.location.origin}${currentPath}`;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalHref);
+
+    // JSON-LD Organization schema
+    const jsonLdId = 'site-jsonld';
+    let jsonLd = document.getElementById(jsonLdId) as HTMLScriptElement | null;
+    const organization = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": THEME.siteName,
+      "url": THEME.siteUrl,
+      "logo": THEME.socialImage,
+    };
+
+    if (!jsonLd) {
+      jsonLd = document.createElement('script');
+      jsonLd.type = 'application/ld+json';
+      jsonLd.id = jsonLdId;
+      document.head.appendChild(jsonLd);
+    }
+    jsonLd.text = JSON.stringify(organization);
   }, [currentPath, pageTitle, pageDescription, ogImage]);
 
   return null;

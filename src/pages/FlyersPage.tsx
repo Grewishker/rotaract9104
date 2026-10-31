@@ -11,7 +11,7 @@ import maternityrenovation from "../assets/flyers/MATERNITY RENOVATION.png";
 import drrrofficialvisit from "../assets/flyers/2025OFFICIALDRRVISIT.png";
 import vcls1 from "../assets/flyers/VIRTUAL CLUB LEARNING SEMINAR.png";
 import vcls2 from "../assets/flyers/VIRTUAL CLUB LEARNING SEMINAR2.png";
-
+import dlac2027 from "../assets/flyers/DLAC2027.png";
 
 const flyers = [
   { title: "2026-27 Rotary Year", date: "Jul 2026", image: rotaryyear, download: rotaryyear },
@@ -22,7 +22,8 @@ const flyers = [
   { title: "Maternity Renovation", date: "", image: maternityrenovation, download: maternityrenovation },
   { title: "2025-26 DRR OFFICIAL VISIT", date: "", image: drrrofficialvisit , download: drrrofficialvisit },
   { title: "VIrtual CLub Learning Seminar 1", date: "", image: vcls1, download: vcls1 },
-  { title: "VIrtual CLub Learning Seminar 1", date: "", image: vcls2 , download: vcls2 },];
+  { title: "VIrtual CLub Learning Seminar 2", date: "", image: vcls2 , download: vcls2 },
+  { title: "DLAC 2027", date: "", image: dlac2027, download: dlac2027 }];
 
 const FlyersPage = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);

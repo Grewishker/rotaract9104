@@ -13,13 +13,13 @@ const updates = [
 
 const ZoneUpdatesPage = () => (
   <div>
-    <PageHero breadcrumb="Media → Newsletters" title="Zone 22 & 22A Updates" subtitle="News and updates from our Rotary zones in West Africa" image={heroAboutImg} />
+    <PageHero breadcrumb="Media → Newsletters" title="Zone 22 & 22A Updates" subtitle="News and updates from our Rotary zones" image={heroAboutImg} />
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
         {updates.map((u) => <BlogCard key={u.title} {...u} />)}
       </div>
     </section>
   </div>
-);
+);  
 
 export default ZoneUpdatesPage;

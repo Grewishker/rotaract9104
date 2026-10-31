@@ -340,7 +340,7 @@ const AboutRotaractPage = () => (
               Our Motto
             </span>
             <p className="text-primary/90 font-heading font-black text-4xl leading-tight mb-4">
-              "Fellowship Through Service"
+              "Service Above Self"
             </p>
             <p className="text-primary font-body text-sm leading-relaxed">
               Every project, every meeting, every conversation is an opportunity

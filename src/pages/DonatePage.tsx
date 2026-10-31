@@ -143,7 +143,7 @@ const DonatePage = () => {
                 <div className="border-t border-white/20 pt-3 mt-2">
                   <p className="text-sm opacity-80">Account Name</p>
                   <p className="font-semibold">{mobileMoney.accountName}</p>
-                  <p className="text-sm opacity-80 mt-1">Account Number (USD)</p>
+                  <p className="text-sm opacity-80 mt-1">Account Number</p>
                   <p className="font-mono font-bold">{mobileMoney.accountNumber}</p>
                 </div>
               </div>

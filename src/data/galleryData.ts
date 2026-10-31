@@ -1,6 +1,6 @@
 // data/galleryData.ts
 import handover from "../assets/2026 handover pics/HANDOVER.jpg";
-import handoverHero from "../assets/2026 handover pics/HANDOVER.jpg";
+// import handoverHero from "../assets/2026 handover pics/HANDOVER.jpg";
 import handover4 from "../assets/2026 handover pics/HANDOVER-4.jpg";
 import handover6 from "../assets/2026 handover pics/HANDOVER-6.jpg";
 import handover64 from "../assets/2026 handover pics/HANDOVER-64.jpg";
@@ -9,7 +9,7 @@ import handover69 from "../assets/2026 handover pics/HANDOVER-69.jpg";
 import handover76 from "../assets/2026 handover pics/HANDOVER-76.jpg";
 import handover80 from "../assets/2026 handover pics/HANDOVER-80.jpg";
 import handover81 from "../assets/2026 handover pics/HANDOVER-81.jpg";
-import handover83 from "../assets/2026 handover pics/HANDOVER-83.jpg";
+// import handover83 from "../assets/2026 handover pics/HANDOVER-83.jpg";
 import handover100 from "../assets/2026 handover pics/HANDOVER-100.jpg";
 import handover108 from "../assets/2026 handover pics/HANDOVER-108.jpg";
 import handover133 from "../assets/2026 handover pics/HANDOVER-133.jpg";
@@ -134,17 +134,17 @@ export const galleryEvents: GalleryEvent[] = [
     description:
       "A memorable handover ceremony celebrating leadership transition and the momentum of the incoming district team.",
     images: [
-      handoverHero, handover, handover4, handover6, handover64, 
+      handover, handover4, handover6, handover64, 
       handover65, handover69, handover76, handover80, 
-      handover81, handover83, handover100, handover108, 
+      handover81, handover100, handover108, 
       handover133, handover150, handover216, handover227,
-      handover320, handover467, handover496, handover496, 
+      handover320, handover467, handover496, 
       handover499, handover501, handover515, handover522,
     ],
   },
   {
     id: "DLAC-2026",
-    title: "DLAC 2026: District Leadership Conference",
+    title: "DLAC 2026: District Learning Assembly and Conference",
     date: "May 8th - 11th, 2026",
     location: "Accra, Ghana",
     description:

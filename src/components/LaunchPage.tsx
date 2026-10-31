@@ -2,14 +2,14 @@ import LaunchCard from "./LaunchCard";
 import FloatingBackground from "./FloatingBackground";
 import { motion } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
-import { SITE_LIVE } from "../config/site";
+import { LAUNCH_DATE } from "../config/site";
 import logoSrc from "@/assets/Rotaract Logo_EN21 (3).png";
 
-type Props = { onBypass?: () => void };
+type Props = { onBypass?: () => void; onComplete?: () => void };
 
-const TARGET = import.meta.env.VITE_LAUNCH_DATE ? new Date(import.meta.env.VITE_LAUNCH_DATE) : new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
+const TARGET = LAUNCH_DATE ? new Date(LAUNCH_DATE) : new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
 
-export default function LaunchPage({ onBypass }: Props) {
+export default function LaunchPage({ onBypass, onComplete }: Props) {
   const [target] = useState(TARGET);
 
   useEffect(() => {
@@ -54,14 +54,7 @@ export default function LaunchPage({ onBypass }: Props) {
             className="w-28 h-28 object-contain"
           />
 
-          <LaunchCard
-            targetDate={target}
-            onComplete={() => {
-              if (SITE_LIVE) {
-                onBypass?.();
-              }
-            }}
-          />
+          <LaunchCard targetDate={target} onComplete={onComplete} />
 
           <div className="text-sm text-slate-500">© 2026 Rotaract District 9104 Ghana — All Rights Reserved.</div>
         </div>

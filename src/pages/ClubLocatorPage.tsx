@@ -1233,19 +1233,47 @@ const ClubLocatorPage = () => {
   const [selectedClub, setSelectedClub] = useState(null);
 
   // Filter clubs based on search, region, and status
-  const filtered = useMemo(() => {
-    return clubs.filter((c) => {
-      const matchSearch = c.name.toLowerCase().includes(search.toLowerCase()) ||
-                         c.president.toLowerCase().includes(search.toLowerCase());
-      const matchRegion = region === "All Regions" || c.region === region;
-      const matchStatus = filterStatus === "all" || c.status === filterStatus;
-      return matchSearch && matchRegion && matchStatus;
-    });
-  }, [search, region, filterStatus]);
+  // Helper to normalize strings for comparison
+const normalize = (str) => (str ?? "").toString().toLowerCase().trim();
+
+// Filter clubs based on search, region, and status
+const filtered = useMemo(() => {
+  const queryWords = normalize(search).split(/\s+/).filter(Boolean);
+
+  return clubs.filter((c) => {
+    // Build one searchable blob per club from all the fields worth matching on
+    const searchableText = normalize(
+      [
+        c.name,
+        c.president,
+        c.region,
+        c.venue,
+        c.contact,
+        c.type,
+        c.meetingDay,
+        c.socials,
+        c.email,
+      ]
+        .filter(Boolean)
+        .join(" ")
+    );
+
+    // Every word in the query must appear somewhere in the club's searchable text
+    const matchSearch =
+      queryWords.length === 0 ||
+      queryWords.every((word) => searchableText.includes(word));
+
+    const matchRegion = region === "All Regions" || c.region === region;
+    const matchStatus = filterStatus === "all" || c.status === filterStatus;
+
+    return matchSearch && matchRegion && matchStatus;
+  });
+}, [search, region, filterStatus]);
 
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedClubs = filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
 
   const handleFilterChange = (setter) => (value) => {
     setter(value);
@@ -1353,7 +1381,7 @@ const ClubLocatorPage = () => {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
                 <input 
                   type="text" 
-                  placeholder="Search clubs by name or president..." 
+                  placeholder="Search by club name, president, venue, region, or contact..." 
                   value={search} 
                   onChange={(e) => handleFilterChange(setSearch)(e.target.value)} 
                   className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:border-accent600 focus:ring-2 focus:ring-accent600/20 transition-all"

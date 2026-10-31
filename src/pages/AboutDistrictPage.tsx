@@ -74,7 +74,7 @@ const AboutDistrictPage = () => (
     <PageHero 
       breadcrumb="About" 
       title="About District 9104" 
-      subtitle="Serving communities across Ghana, West Africa — Zones 22 & 22A" 
+      subtitle="Serving communities across Ghana" 
       image={heroAboutImg} 
     />
     
@@ -98,7 +98,7 @@ const AboutDistrictPage = () => (
         <div className="space-y-6">
           <HighlightBox title="District Quick Facts">
             <ul className="space-y-2">
-              <li>• Coverage: Ghana, West Africa</li>
+              <li>• Coverage: Ghana</li>
               <li>• Zones: 22 & 22A</li>
               <li>• 60+ Active Clubs</li>
               <li>• 3,000+ Members</li>

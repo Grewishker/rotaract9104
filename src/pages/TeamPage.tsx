@@ -15,6 +15,9 @@ import deputyTreasurerImg from "../assets/TeamImages/10. Jamila Musah - Deputy T
 import adminImg from "../assets/TeamImages/11. Kelvin Amoako - DISTRICT ADMIN.jpeg";
 import deputyAdminImg from "../assets/TeamImages/12. ZARA DOE - DEPUTY ADMIN.jpg";
 import coordinatorImg from "../assets/TeamImages/13. Olivia Quaye - DIST COORDINATOR.jpeg";
+import councilPresident from "../assets/TeamImages/30. Kingsford Amoah - Council Of Presidents Chair.jpg";
+import protocolsec from "../assets/TeamImages/31. Kwaku Sarpong Debrah District Protocols.jpg";
+import photography from "../assets/TeamImages/32. DerrickObeng Brobbey District Photographer.jpg";
 import deputyCoordinatorImg from "../assets/TeamImages/14. Courage Edudji Soglo - Deputy Coordinator.jpeg";
 import membershipDirImg from "../assets/TeamImages/15. Ohenewaa Damptey- Membership Director.jpg";
 import deputyMembershipImg from "../assets/TeamImages/16. Samuel Boateng Danquah- Dep. Membership.jpeg";
@@ -92,7 +95,7 @@ const officers = [
     image: drreImg,
   },
   {
-    name: "Rtr. Boakye Agyemang",
+    name: "Rtr. Boakye Agyeman",
     role: "Monitoring & Evaluation Chair",
     initials: "M&E",
     image: meChairImg,
@@ -104,20 +107,20 @@ const officers = [
     image: vdrr1Img,
   },
   {
-    name: "Rtr. Sedinam Edreh",
+    name: "Rtr. Sedinam Laura Edzia",
     role: "Vice District Rotaract Representative (VDRR)",
     initials: "VDRR",
     image: vdrr2Img,
   },
   
   {
-    name: "Rtr. Sky-Margaret Ocloo",
+    name: "Rtr. Sky-Margaret Afua Ocloo",
     role: "District Secretary",
     initials: "DS",
     image: secretaryImg,
   },
   {
-    name: "Rtr. Showers Carr Obeng",
+    name: "Rtr. Showers Awurasi Obeng",
     role: "Deputy District Secretary",
     initials: "DDS",
     image: deputySecretaryImg,
@@ -129,25 +132,25 @@ const officers = [
     image: treasurerImg,
   },
   {
-    name: "Rtr. Jamila Musah",
+    name: "Rtr. Jamilatu Musah Fongo",
     role: "Deputy District Treasurer",
     initials: "DDT",
     image: deputyTreasurerImg,
   },
   {
-    name: "Rtr. Kelvin Amoako",
+    name: "Rtr. Kelvin Nana Yaw Aning Amoako",
     role: "District Administrator",
     initials: "DA",
     image: adminImg,
   },
   {
-    name: "Rtr. Zara Doe",
+    name: "Rtr. Princess Zara Doe",
     role: "Deputy District Administrator",
     initials: "DDA",
     image: deputyAdminImg,
   },
   {
-    name: "Rtr. Olivia Quaye",
+    name: "Rtr. Olivia Naa Odey Quaye",
     role: "District Coordinator",
     initials: "DC",
     image: coordinatorImg,
@@ -158,25 +161,41 @@ const officers = [
     initials: "DDC",
     image: deputyCoordinatorImg,
   },
+  { name: "Kingsford Amoah",
+    role: "Council of President Chair",
+    initials: "CoP",
+    image: councilPresident,
+  },
+  { name: "Kwaku Sarpong Debrah",
+    role: "Dsitrict Protocols and Security Chair",
+    initials: "DPS",
+    image: protocolsec,
+  },
+  { name: "Derrick Obeng Brobbey",
+    role: "District Photography",
+    initials: "DP",
+    image: photography,
+  },
+
 ];
 
 const chairs = [
   
   
   {
-    name: "Rtr. Ohenewaa Damptey",
+    name: "Rtr. Mercy Ohenewaa Damptey",
     role: "Membership Director",
     initials: "MD",
     image: membershipDirImg,
   },
   {
-    name: "Rtr. Samuel Boateng Danquah",
+    name: "Rtr. Samuel Boateng-Danquah",
     role: "Deputy Membership Director",
     initials: "DMD",
     image: deputyMembershipImg,
   },
   {
-    name: "Rtr. Senoo Senami",
+    name: "Rtr. Senoo Senami Kwasi",
     role: "Projects Director",
     initials: "PDir",
     image: projectsDirImg,
@@ -194,7 +213,7 @@ const chairs = [
     image: professionalDevImg,
   },
   {
-    name: "Rtr. Kumiwaa Boahene",
+    name: "Rtr. Afua Kumiwaa Boahene",
     role: "Deputy Professional Development Director",
     initials: "DPDD",
     image: deputyProfessionalImg,
@@ -206,19 +225,19 @@ const chairs = [
     image: publicImageDirImg,
   },
   {
-    name: "Rtr. Kekeli Aryee",
+    name: "Rtr. Theodora Kekeli Aryee",
     role: "Deputy Public Image Director",
     initials: "DPID",
     image: deputyPublicImageImg,
   },
   {
-    name: "Rtr. Baaba Adu Mensah",
+    name: "Rtr. Esther Baaba Adu Mensah",
     role: "Interact Director",
     initials: "ID",
     image: interactDirImg,
   },
   {
-    name: "Rtr. Sarah Anane",
+    name: "Rtr. Sarah Akua Kyerewaa Anane",
     role: "Deputy Interact Director",
     initials: "DID",
     image: deputyInteractImg,
@@ -230,7 +249,7 @@ const chairs = [
     image: intlRelationsImg,
   },
   {
-    name: "Rtr. Elsie Atobra",
+    name: "Rtr. Elsie Prospera Atobra",
     role: "Deputy International Relations Director",
     initials: "DIRD",
     image: deputyIntlRelationsImg,
@@ -318,7 +337,7 @@ const TeamPage = () => (
         >
           <SectionTitle 
             title="Committee Chairs" 
-            subtitle="Leading specialized committees across the district" 
+            subtitle="Leading specialized committees across the district"   
           />
         </motion.div>
         

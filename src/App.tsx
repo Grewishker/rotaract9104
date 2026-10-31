@@ -36,15 +36,20 @@ import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 import LaunchPage from "./components/LaunchPage";
 import ResourcesPage from "./pages/ResourcesPage";
-import { SITE_LIVE } from "./config/site";
+import { isLaunched } from "./config/site";
 import { useEffect, useState, useCallback } from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   const [localBypass, setLocalBypass] = useState(false);
+  const [launched, setLaunched] = useState(() => isLaunched());
 
   const bypass = useCallback(() => setLocalBypass(true), []);
+
+  const handleLaunchComplete = useCallback(() => {
+    setLaunched(true);
+  }, []);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -54,10 +59,21 @@ const App = () => {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
-  const showLaunch = !SITE_LIVE && !localBypass;
+  // Safety net: if someone leaves the tab open past the launch moment
+  // without the Countdown's own onComplete firing (e.g. tab was backgrounded),
+  // re-check every 30s so it still flips without needing a manual reload.
+  useEffect(() => {
+    if (launched) return;
+    const interval = setInterval(() => {
+      if (isLaunched()) setLaunched(true);
+    }, 30_000);
+    return () => clearInterval(interval);
+  }, [launched]);
+
+  const showLaunch = !launched && !localBypass;
 
   if (showLaunch) {
-    return <LaunchPage onBypass={bypass} />;
+    return <LaunchPage onBypass={bypass} onComplete={handleLaunchComplete} />;
   }
 
   return (

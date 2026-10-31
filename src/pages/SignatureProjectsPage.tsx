@@ -27,7 +27,7 @@ const projects = [
     tags: ["Education", "Literacy"], 
     image: literacyImg,
     icon: BookOpen,
-    stats: "10,000+ books distributed",
+    stats: "1,000+ books distributed",
     color: "bg-accent600",
   },
   { 

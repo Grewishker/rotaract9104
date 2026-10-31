@@ -47,7 +47,7 @@ const navItems = [
   {
     label: "Contact", children: [
       { label: "Club Locator", to: "/contact/club-locator" },
-      // { label: "Contact Form", to: "/contact" },
+        { label: "Contact", to: "/contact" },
     ]
   },
   { label: "Donate", to: "/donate" },

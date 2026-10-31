@@ -6,7 +6,7 @@ export const THEME = {
   name: "Create Lasting Impact",
   shortName: "Create Lasting Impact",
   siteName: "Rotaract District 9104",
-  siteTitle: "Rotaract District 9104 | Ghana • West Africa",
+  siteTitle: "Rotaract District 9104 | Ghana • Region 27 Zone 22",
   tagline: "Service Above Self — empowering young leaders across Ghana through Rotaract.",
   rotaryYear: "2026-27",
   rotaryYearLabel: "Rotary Year 2026–27",
@@ -30,7 +30,7 @@ export const PAGE_METADATA = {
   },
   "/about/district-9104": {
     title: `About District 9104 | ${THEME.siteName}`,
-    description: "Explore the structure, values, and service impact of Rotaract District 9104 in Ghana and West Africa.",
+    description: "Explore the structure, values, and service impact of Rotaract District 9104.",
   },
   "/about/drr": {
     title: `District Rotaract Representative | ${THEME.siteName}`,

@@ -1,19 +1,27 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import OptimizedImage from "../components/OptimizedImage";
 import heroAboutImg from "../assets/hero-about.jpg";
 import { ChevronLeft, Calendar, MapPin } from "lucide-react";
 import { galleryEvents } from "../data/galleryData";
+import Lightbox from "../components/Lightbox";
 
 const GalleryDetailPage = () => {
   const { id } = useParams<{ id: string }>();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Get data from the shared source
   const gallery = useMemo(
     () => galleryEvents.find((item) => item.id === id),
     [id]
   );
+
+  const handleImageClick = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   if (!gallery) {
     return (
@@ -31,14 +39,6 @@ const GalleryDetailPage = () => {
 
   return (
     <div>
-      <PageHero
-        breadcrumb="Media"
-        title={gallery.title}
-        subtitle={gallery.description}
-        image={heroAboutImg}
-        showOverlay
-      />
-
       <section className="bg-slate-50 py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
@@ -64,23 +64,32 @@ const GalleryDetailPage = () => {
             </Link>
           </div>
 
-          {/* Show ALL images here */}
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {/* Image grid */}
+          <div className="columns-1 sm:columns-2 xl:columns-3 gap-6 space-y-6">
             {gallery.images.map((image, index) => (
               <div 
                 key={`${gallery.id}-${index}`} 
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300"
+                className="break-inside-avoid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                onClick={() => handleImageClick(index)}
               >
                 <OptimizedImage 
                   src={image} 
                   alt={`${gallery.title} — photo ${index + 1}`} 
-                  className="h-72 w-full object-cover hover:scale-105 transition-transform duration-500" 
+                  className="w-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <Lightbox
+        images={gallery.images}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
+import PageMetadata from "../components/PageMetadata";
 import HighlightBox from "../components/HighlightBox";
 import { CalendarDays, MapPin, Users, Target, ArrowRight, Star, Clock, Award, Heart } from "lucide-react";
 import dlacImg from "../assets/dlac-event.png";
+import dlacFlyer from "../assets/flyers/DLAC2027.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -42,6 +44,13 @@ const DLACPage = () => (
     animate={{ opacity: 1 }}
     transition={{ duration: 0.5 }}
   >
+    <PageMetadata
+      title="DLAC 2027 Registration | Rotaract District 9104"
+      description="Register for DLAC 2027 at The Grove Essipong Beach Resort, Sekondi-Takoradi. Early bird rate GH₵3,100 through 30th November. Payment options include First Bank Ghana and MTN Mobile Money."
+      image={dlacFlyer}
+      path="/events/dlac"
+    />
+
     <PageHero 
       breadcrumb="Events" 
       title="DLAC 2027" 
@@ -97,30 +106,8 @@ const DLACPage = () => (
                 ))}
               </ul>
             </motion.div>
-            
-            <motion.div variants={fadeInUp} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="font-display text-primary text-xl font-bold mb-4 flex items-center gap-2">
-                <Clock className="text-accent600" size={22} />
-                Plan to Attend
-              </h3>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Registration details for DLAC 2027 will be announced by the district service team soon. Keep checking back for the official schedule, venue information, and how your club can participate.
-              </p>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* <Link 
-                  to="/join" 
-                  className="inline-flex items-center gap-2 bg-accent600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-accent700 transition-all shadow-lg hover:shadow-xl group"
-                >
-                  Stay Updated
-                  <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                </Link> */}
-              </motion.div>
-            </motion.div>
           </motion.div>
-          
+
           {/* Sidebar */}
           <motion.div variants={fadeInUp} className="space-y-6">
             <motion.div
@@ -130,7 +117,7 @@ const DLACPage = () => (
               <HighlightBox title="What happened in 2025 & 2026">
                 <ul className="space-y-3">
                   {[
-                    "DLAC 2025 brought together 500+ Rotaractors for leadership and service planning.",
+                    "DLAC 2025 brought together 200+ Rotaractors for leadership and service planning.",
                     "DLAC 2026 deepened club collaboration with shared project showcases.",
                     "Both conferences accelerated membership and strengthened district fellowship.",
                   ].map((item, i) => (
@@ -159,10 +146,10 @@ const DLACPage = () => (
                 <h3 className="font-display font-bold text-2xl mb-6">DLAC 2027 Preview</h3>
                 <ul className="space-y-4">
                   {[
-                    { icon: CalendarDays, text: "Target window: June 2027 (exact dates coming soon)" },
-                    { icon: MapPin, text: "Location: Greater Accra region" },
-                    { icon: Users, text: "Expected attendees: 600+ Rotaractors" },
-                    { icon: Target, text: "Theme: Leading with Service" },
+                    { icon: CalendarDays, text: "25th – 28th March 2027" },
+                    { icon: MapPin, text: "The Grove Essipong Beach Resort, Sekondi-Takoradi" },
+                    { icon: Users, text: "Expected attendees: 100+ Rotaractors" },
+                    { icon: Target, text: "Theme: #JourneyToTheWest" },
                   ].map((item, i) => (
                     <motion.li 
                       key={item.text}
@@ -184,6 +171,72 @@ const DLACPage = () => (
             </motion.div>
           </motion.div>
         </AnimatedSection>
+
+        <section className="mt-16 bg-white rounded-3xl border border-gray-200 shadow-sm px-4 py-10 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8 lg:items-start">
+              <div className="flex-1">
+                <h2 className="font-display text-primary text-3xl sm:text-4xl font-bold mb-4">DLAC 2027 Registration</h2>
+                <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                  Registration and payment are now open for DLAC 2027. Join Rotaractors from across District 9104 at The Grove Essipong Beach Resort in Sekondi-Takoradi.
+                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl bg-gradient-to-br from-accent600/10 to-secondary/10 p-5 border border-gray-100">
+                    <p className="text-sm uppercase tracking-[0.2em] text-accent600 font-semibold mb-2">Early Bird Rate</p>
+                    <p className="text-3xl font-bold text-primary">GH₵3,100</p>
+                    <p className="text-sm text-gray-500 mt-2">Ends: 30th November 2026</p>
+                  </div>
+                  <div className="rounded-2xl bg-gradient-to-br from-accent600/10 to-secondary/10 p-5 border border-gray-100">
+                    <p className="text-sm uppercase tracking-[0.2em] text-accent600 font-semibold mb-2">Event Dates</p>
+                    <p className="text-xl font-semibold text-primary">25th – 28th March 2027</p>
+                    <p className="text-sm text-gray-500 mt-2">The Grove Essipong Beach Resort, Sekondi-Takoradi</p>
+                  </div>
+                </div>
+
+                <div className="mt-8 space-y-4 text-gray-700">
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Payment Options</h3>
+                    <p className="font-semibold">First Bank Ghana</p>
+                    <p>Account Name: Rotaract District 9104</p>
+                    <p>Account Number: 0043040001281</p>
+                    <p>Branch: Kaneshie</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">MTN Mobile Money</p>
+                    <p>Number: 0246691883</p>
+                    <p>MoMo Name: Rotaract District 9104</p>
+                  </div>
+                  <p className="text-sm italic text-gray-500">Installment payment plans are available. Contact the district service team for details.</p>
+                </div>
+
+                <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSerpMunk1-6AP74fz7EHezOfwjD5QE9imdqEskID2S5zQXNiQ/viewform" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-accent600 px-8 py-4 text-white font-semibold shadow-lg hover:bg-accent700 transition-all">Open Registration Form</a>
+                  <span className="text-sm text-gray-500">or scan the QR code on the flyer</span>
+                </div>
+              </div>
+
+              <div className="w-full lg:w-[380px]">
+                <img src={dlacFlyer} alt="DLAC 2027 Flyer" className="w-full rounded-3xl shadow-xl object-cover" loading="lazy" />
+              </div>
+            </div>
+
+            <div className="mt-10 rounded-3xl border border-gray-100 overflow-hidden">
+              <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900">Register Inline</h3>
+                <p className="text-sm text-gray-500 mt-1">If the embedded form is blocked by your browser, use the link above.</p>
+              </div>
+              <div className="w-full">
+                <iframe
+                  title="DLAC 2027 Registration"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSerpMunk1-6AP74fz7EHezOfwjD5QE9imdqEskID2S5zQXNiQ/viewform?embedded=true"
+                  className="w-full"
+                  style={{ minHeight: 680 }}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Hero Image */}
         <motion.div

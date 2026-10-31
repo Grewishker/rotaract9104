@@ -12,7 +12,9 @@ import {
   FaMobile,
   FaGlobe,
   FaBuilding,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaLinkedin,
+  FaYoutube,
 } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import heroAboutImg from "../assets/hero-about.jpg";
@@ -23,23 +25,38 @@ const ContactPage = () => {
       name: "TikTok", 
       icon: FaTiktok, 
       handle: "Rotaract District 9104",
-      url: "https://tiktok.com/@rotaractdistrict9104",
+      url: "https://vm.tiktok.com/ZS9rVmfpgCbU3-AUnZp/",
       color: "hover:bg-black"
     },
-    { 
-      name: "Snapchat", 
-      icon: FaSnapchat, 
-      handle: "rotaract_d9104",
-      url: "https://snapchat.com/add/rotaract_d9104",
-      color: "hover:bg-yellow-500"
-    },
+    // { 
+    //   name: "Snapchat", 
+    //   icon: FaSnapchat, 
+    //   handle: "rotaract_d9104",
+    //   url: "https://www.snapchat.com/add/rdistrict9104",
+    //   color: "hover:bg-yellow-500"
+    // },
     { 
       name: "Instagram", 
       icon: FaInstagram, 
       handle: "ROTARACT GHANA",
-      url: "https://instagram.com/rotaractghana",
+      url: "https://www.instagram.com/rotaract_d9104/",
       color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500"
     },
+    {
+      name: "Linkedin",
+      icon: FaLinkedin,
+      handle: "Rotaract D9104",
+      url: "https://www.linkedin.com/company/rotaract-ghana/",
+      color: "hover:bg-blue-500"
+    },
+    {
+      name: "Youtube",
+      icon: FaYoutube,
+      handle: "rotaractdistrict9104",
+      url: "https://l.instagram.com/?u=https%3A%2F%2Fyoutube.com%2F%40rotaractdistrict9104%3Fsi%3D-OyFk48D0uo70qgF%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnsDbKTURiCtrZ116wILT0sJOel8SCK6ezDANJnT6jUaA1grnqwNPXJgjdyHc_aem_oolG_FVbk4ac6NMS2IUI0A&e=AUDuNCooM0mtZj7CHTtH8JzXhzFhYLhFaS1H_Efj9t-vFFW0KMDC6ZSIPTVfL3J0EeQCvnHv0VG4ZC4QEPZgjvVLUZPIk25ONha--kD7wkOOcWbDGVCLAfEZTGg6_4jLHB6fNq8",
+      color: "hover:bg-red-500"
+    }
+
   ];
 
   const bankAccounts = [
@@ -159,7 +176,7 @@ const ContactPage = () => {
               <h2 className="text-2xl font-bold">Follow Us</h2>
               <p className="opacity-90 mt-2">Stay connected with us on social media</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-6 max-w-3xl mx-auto">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}

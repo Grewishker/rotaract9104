@@ -8,8 +8,9 @@ import {
 } from "react-icons/fa";
 import { THEME } from "@/lib/theme";
 import calendarEvents, { getUpcomingEvents } from "../data/events";
+import heroSlide5 from "../assets/HANDOVER-499.jpg"
 import heroSlide1 from "../assets/hero-1.jpg";
-import heroSlide4 from "../assets/heroImages/HANDOVER-100.jpg"
+import heroSlide4 from "../assets/heroImages/HANDOVER-101.jpg"
 import heroSlide2 from "../assets/hero-6.jpg";
 import heroSlide3 from "../assets/hero-3.jpg";
 import healthImg from "../assets/fighting-disease.jpg";
@@ -24,9 +25,7 @@ import maternalImg from "../assets/maternal-child-health.jpg";
 import economyImg from "../assets/growing-economies.png";
 
 // ─── VIDEO IMPORT ──────────────────────────────────────────────────────────────
-// Make sure to add your video file to the assets folder
 import vdrrVideo from "../assets/videos/vdrr-talk.mp4";
-// If you have a poster/thumbnail image for the video:
 import vdrrVideoThumbnail from "../assets/videos/vdrr-talk-thumbnail.jpg";
 
 import fourWayTestItems1 from "@/assets/fourWayTestItems1.png";
@@ -232,24 +231,24 @@ const AnimatedCounter = ({ value, label, delay = 0 }: { value: string; label: st
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.6, delay }}
     >
-      <div className="font-display font-black text-[#8B1A4A] text-5xl md:text-6xl leading-none">
+      <div className="font-display font-black text-[#8B1A4A] text-4xl md:text-5xl lg:text-6xl leading-none">
         {count}{suffix}
       </div>
-      <div className="text-gray-500 text-xs uppercase tracking-[0.18em] mt-2 font-semibold">{label}</div>
+      <div className="text-gray-500 text-[10px] sm:text-xs uppercase tracking-[0.18em] mt-2 font-semibold">{label}</div>
     </motion.div>
   );
 };
 
 // ─── SLIDES DATA ──────────────────────────────────────────────────────────────
 const slides = [
-  { title: "Elevating Service Through Inspired Leadership", sub: "Empowering young leaders across Ghana to create lasting change in their communities.", cta1: { label: "Join Rotaract", to: "/join" }, cta2: { label: "Learn More", to: "/about/rotaract" }, image: heroSlide1 },
-  { title: THEME.name, sub: "Under the leadership of RI President Olayinka Hakeem Babalola, we embrace the magic within us all.", cta1: { label: "Explore the Theme", to: "/about/rotary-international" }, cta2: { label: "Our Projects", to: "/projects/signature" }, image: heroSlide4 },
-  { title: "Relive the Experiences of DLAC 2026", sub: "Discover the magic of Rotary International's largest gathering of young leaders.", cta1: { label: "Gallery", to: "/gallery" }, cta2: { label: "View Events", to: "/events/calendar" }, image: heroSlide3 },
+  { title: "Elevating Service Through Inspired Leadership", sub: "Empowering young leaders across Ghana to create lasting change in their communities.", cta1: { label: "Join Rotaract", to: "/join" }, cta2: { label: "Learn More", to: "/about/rotaract" }, image: heroSlide5 },
+  { title: THEME.name, sub: "Under the leadership of RI President Olayinka Hakeem Babalola, we embrace the magic within us all.", cta1: { label: "Explore", to: "/media/blog" }, cta2: { label: "Our Projects", to: "/projects/signature" }, image: heroSlide4 },
+  { title: "Relive the Experiences of DLAC 2026", sub: "Discover the magic of Rotary International's largest gathering of young leaders.", cta1: { label: "Gallery", to: "/media/gallery" }, cta2: { label: "View Events", to: "/events/calendar" }, image: heroSlide3 },
 ];
 
 const stats = [
   { value: "64+", label: "Clubs" },
-  { value: "3,000+", label: "Members" },
+  { value: "1600+", label: "Members" },
   { value: "10", label: "Clusters" },
 ];
 
@@ -301,17 +300,17 @@ const VideoSection = () => {
   };
   
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
-        <AnimatedSection variant="fadeUp" className="text-center mb-12">
-          <span className="inline-block text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em] mb-4">
+    <section className="py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <AnimatedSection variant="fadeUp" className="text-center mb-8 sm:mb-10 md:mb-12">
+          <span className="inline-block text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] mb-3 sm:mb-4">
             Rotaract In Action
           </span>
-          <h2 className="font-display font-black text-gray-900 text-4xl md:text-5xl lg:text-6xl mb-5">
-            Voice of  DRR <br />
+          <h2 className="font-display font-black text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-5">
+            Voice of DRR <br />
             <span className="text-[#8B1A4A]">Inspiring the Next Generation</span>
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-4">
             Watch as our District Rotaract Representative share insights on leadership, 
             service, and the future of Rotaract in District 9104.
           </p>
@@ -352,9 +351,9 @@ const VideoSection = () => {
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.5, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="w-20 h-20 md:w-24 md:h-24 bg-[#8B1A4A]/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl hover:bg-[#8B1A4A] transition-colors duration-300"
+                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-[#8B1A4A]/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl hover:bg-[#8B1A4A] transition-colors duration-300"
                 >
-                  <FaPlay className="text-white text-2xl md:text-3xl ml-1" />
+                  <FaPlay className="text-white text-xl sm:text-2xl md:text-3xl ml-1" />
                 </motion.div>
               )}
               {isPlaying && (
@@ -363,38 +362,38 @@ const VideoSection = () => {
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.5, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="absolute bottom-4 right-4 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
+                  className="absolute bottom-4 right-4 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
                 >
-                  <FaPause className="text-white text-sm" />
+                  <FaPause className="text-white text-xs sm:text-sm" />
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
           
           {/* Controls */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="flex items-center gap-4">
+          <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="flex items-center gap-3 sm:gap-4">
               <button 
                 onClick={togglePlay}
                 className="text-white hover:text-[#e54d7e] transition-colors"
               >
-                {isPlaying ? <FaPause size={16} /> : <FaPlay size={16} />}
+                {isPlaying ? <FaPause size={14} className="sm:text-base" /> : <FaPlay size={14} className="sm:text-base" />}
               </button>
               <button 
                 onClick={toggleMute}
                 className="text-white hover:text-[#e54d7e] transition-colors"
               >
                 {isMuted ? (
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 ) : (
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011-.217zM14.657 5.343a1 1 0 011.414 0 8 8 0 010 11.314 1 1 0 01-1.414-1.414 6 6 0 000-8.486 1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.414 0 4 4 0 010 5.657 1 1 0 01-1.414-1.414 2 2 0 000-2.829 1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 )}
               </button>
-              <span className="text-white/80 text-xs font-medium ml-auto">
+              <span className="text-white/80 text-[10px] sm:text-xs font-medium ml-auto">
                 {isPlaying ? "Click to pause" : "Click to play"}
               </span>
             </div>
@@ -405,31 +404,12 @@ const VideoSection = () => {
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full flex items-center gap-2"
+            className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2"
           >
-            <span className="w-2 h-2 bg-[#e54d7e] rounded-full animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-wider">Voice of DRR</span>
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#e54d7e] rounded-full animate-pulse" />
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">Voice of DRR</span>
           </motion.div>
         </motion.div>
-        
-        {/* Video Stats */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10"
-        >
-          {[
-            { label: "Views", value: "1.2K+" },
-            { label: "Duration", value: "4:32" },
-            { label: "Topic", value: "Leadership" },
-          ].map((stat, i) => (
-            <div key={stat.label} className="bg-[#fdf2f6] rounded-xl p-4 text-center">
-              <div className="font-display font-black text-[#8B1A4A] text-xl">{stat.value}</div>
-              <div className="text-gray-500 text-xs uppercase tracking-wider font-semibold">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div> */}
       </div>
     </section>
   );
@@ -454,7 +434,7 @@ const HomePage = () => {
   const upcomingEvents = useMemo(() => getUpcomingEvents(calendarEvents, 3), []);
 
   return (
-    <div className="font-sans antialiased">
+    <div className="font-sans antialiased overflow-x-hidden">
       {/* ─── SCROLL PROGRESS BAR ────────────────────────────────────────────── */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 z-50 bg-gradient-to-r from-[#8B1A4A] via-[#e54d7e] to-[#8B1A4A] origin-left"
@@ -462,84 +442,145 @@ const HomePage = () => {
       />
 
       {/* ─── HERO SLIDER ─────────────────────────────────────────────────────── */}
-      <section className="relative h-[640px] md:h-[720px] flex items-end overflow-hidden">
-        <AnimatePresence mode="wait">
-          {slides.map((s, i) => (
-            i === currentSlide && (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.05 }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-0"
-              >
-                <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#3f0820]/90 via-[#8B1A4A]/40 to-transparent" />
-              </motion.div>
-            )
-          ))}
-        </AnimatePresence>
+      <section className="relative h-[500px] sm:h-[560px] md:h-[640px] lg:h-[720px] flex items-end overflow-hidden bg-[#1a0a12]">
+  <AnimatePresence mode="wait">
+    {slides.map((s, i) => (
+      i === currentSlide && (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ 
+            duration: 0.9, 
+            ease: [0.43, 0.13, 0.23, 0.96] 
+          }}
+          className="absolute inset-0"
+        >
+          {/* Image with zoom effect */}
+          <motion.img 
+            src={s.image} 
+            alt={s.title} 
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ scale: 1.15 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 1.08 }}
+            transition={{ 
+              duration: 1.2, 
+              ease: [0.43, 0.13, 0.23, 0.96] 
+            }}
+          />
+          
+          {/* Dark gradient overlay - always present */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a12]/95 via-[#8B1A4A]/50 to-transparent" />
+          
+          {/* Subtle overlay animation */}
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-r from-[#8B1A4A]/20 via-transparent to-[#8B1A4A]/20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          />
+        </motion.div>
+      )
+    ))}
+  </AnimatePresence>
 
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#8B1A4A] via-[#e54d7e] to-[#8B1A4A] z-20" />
+  {/* Animated top gradient bar */}
+  <motion.div 
+    className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#8B1A4A] via-[#e54d7e] to-[#8B1A4A] z-20"
+    initial={{ scaleX: 0 }}
+    animate={{ scaleX: 1 }}
+    transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
+  />
 
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pb-20">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -60 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <motion.h1 
-              className="font-display font-extrabold text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] max-w-3xl mb-5 drop-shadow-xl"
-              initial={{ clipPath: "inset(0 0 100% 0)" }}
-              animate={{ clipPath: "inset(0 0 0% 0)" }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {slide.title}
-            </motion.h1>
-            <motion.p 
-              className="text-white/90 text-lg max-w-xl mb-8 leading-relaxed"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              {slide.sub}
-            </motion.p>
-            <motion.div 
-              className="flex flex-wrap gap-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-            >
-              <Link to={slide.cta1.to} className="inline-flex items-center gap-2 bg-[#8B1A4A] hover:bg-[#6b1238] text-white font-bold px-7 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/40 hover:shadow-xl group">
-                {slide.cta1.label}
-                <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to={slide.cta2.to} className="inline-flex items-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#8B1A4A] font-bold px-7 py-3.5 rounded-full transition-all duration-300">
-                {slide.cta2.label}
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 pb-12 sm:pb-16 md:pb-20">
+    <motion.div
+      key={currentSlide}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -40 }}
+      transition={{ 
+        duration: 0.7, 
+        ease: [0.43, 0.13, 0.23, 0.96],
+        delay: 0.15
+      }}
+    >
+      <motion.h1 
+        className="font-display font-extrabold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] max-w-3xl mb-3 sm:mb-5 drop-shadow-xl"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.8, 
+          ease: [0.43, 0.13, 0.23, 0.96],
+          delay: 0.25
+        }}
+      >
+        {slide.title}
+      </motion.h1>
+      
+      <motion.p 
+        className="text-white/90 text-sm sm:text-base md:text-lg max-w-xl mb-6 sm:mb-8 leading-relaxed"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ 
+          duration: 0.7, 
+          ease: [0.43, 0.13, 0.23, 0.96],
+          delay: 0.4 
+        }}
+      >
+        {slide.sub}
+      </motion.p>
+      
+      <motion.div 
+        className="flex flex-wrap gap-2 sm:gap-3"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.6, 
+          ease: [0.43, 0.13, 0.23, 0.96],
+          delay: 0.55 
+        }}
+      >
+        <Link to={slide.cta1.to} className="inline-flex items-center gap-2 bg-[#8B1A4A] hover:bg-[#6b1238] text-white font-bold px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/40 hover:shadow-xl group text-sm sm:text-base">
+          {slide.cta1.label}
+          <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+        </Link>
+        <Link to={slide.cta2.to} className="inline-flex items-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#8B1A4A] font-bold px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full transition-all duration-300 text-sm sm:text-base">
+          {slide.cta2.label}
+        </Link>
+      </motion.div>
+    </motion.div>
+  </div>
 
-        {/* Slide dots */}
-        <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {slides.map((_, i) => (
-            <button key={i} onClick={() => setCurrentSlide(i)}
-              className={`transition-all duration-300 rounded-full ${i === currentSlide ? "w-8 h-2.5 bg-[#e54d7e]" : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"}`}
-            />
-          ))}
-        </div>
-      </section>
+  {/* Slide dots */}
+  <div className="absolute bottom-4 sm:bottom-7 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-20">
+    {slides.map((_, i) => (
+      <button 
+        key={i} 
+        onClick={() => setCurrentSlide(i)}
+        className={`transition-all duration-300 rounded-full ${
+          i === currentSlide 
+            ? "w-6 sm:w-8 h-2 sm:h-2.5 bg-[#e54d7e]" 
+            : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white/40 hover:bg-white/70"
+        }`}
+      />
+    ))}
+  </div>
+
+  {/* Decorative particle overlay (optional) */}
+  <div className="absolute inset-0 pointer-events-none opacity-20">
+    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#e54d7e] rounded-full blur-3xl" />
+    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#8B1A4A] rounded-full blur-3xl" />
+  </div>
+</section>
 
       {/* ─── THEME BANNER ────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#8B1A4A] py-8 text-center overflow-hidden">
+      <section className="relative bg-[#8B1A4A] py-6 sm:py-8 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)", backgroundSize: "12px 12px" }} />
-        <div className="relative z-10">
+        <div className="relative z-10 px-4">
           <motion.p 
-            className="text-white/70 text-xs uppercase tracking-[0.25em] font-bold mb-2"
+            className="text-white/70 text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold mb-1 sm:mb-2"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -548,7 +589,7 @@ const HomePage = () => {
             {THEME.rotaryYearLabel}
           </motion.p>
           <motion.h2 
-            className="font-display font-black text-white text-3xl md:text-4xl mb-1"
+            className="font-display font-black text-white text-2xl sm:text-3xl md:text-4xl mb-0.5 sm:mb-1"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -557,7 +598,7 @@ const HomePage = () => {
             {THEME.name}
           </motion.h2>
           <motion.p 
-            className="text-white/80 text-sm"
+            className="text-white/80 text-xs sm:text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -569,8 +610,8 @@ const HomePage = () => {
       </section>
 
       {/* ─── STATS STRIP ─────────────────────────────────────────────────────── */}
-      <section className="bg-white border-b border-gray-100 py-14">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+      <section className="bg-white border-b border-gray-100 py-10 sm:py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 text-center">
           {stats.map((s, i) => (
             <AnimatedCounter key={s.label} value={s.value} label={s.label} delay={i * 0.1} />
           ))}
@@ -581,10 +622,10 @@ const HomePage = () => {
       <VideoSection />
 
       {/* ─── DRR MESSAGE ─────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[360px_1fr] gap-14 items-center">
+      <section className="py-16 sm:py-20 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-[360px_1fr] gap-10 sm:gap-14 items-center">
           <motion.div 
-            className="relative"
+            className="relative max-w-sm mx-auto md:max-w-none"
             initial={{ opacity: 0, x: -60, rotate: -3 }}
             whileInView={{ opacity: 1, x: 0, rotate: 0 }}
             viewport={{ once: true }}
@@ -592,11 +633,11 @@ const HomePage = () => {
           >
             <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl border-2 border-[#8B1A4A]/20" />
             <img src={drrImg} alt="District Rotaract Representative"
-              className="relative w-full h-[480px] object-cover rounded-2xl shadow-2xl"
+              className="relative w-full h-[400px] sm:h-[440px] md:h-[480px] object-cover rounded-2xl shadow-2xl"
               loading="lazy" width={640} height={864}
             />
             <motion.span 
-              className="absolute bottom-5 left-5 bg-[#8B1A4A] text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg"
+              className="absolute bottom-5 left-5 bg-[#8B1A4A] text-white text-[10px] sm:text-xs font-black px-3 sm:px-4 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-lg"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -608,7 +649,7 @@ const HomePage = () => {
           
           <div>
             <motion.span 
-              className="inline-block text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em] mb-3"
+              className="inline-block text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] mb-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -617,7 +658,7 @@ const HomePage = () => {
               District Rotaract Representative
             </motion.span>
             <motion.h2 
-              className="font-display font-black text-gray-900 text-4xl md:text-5xl leading-[1.1] mb-6"
+              className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl leading-[1.1] mb-5 sm:mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -626,14 +667,14 @@ const HomePage = () => {
               A Message from<br /><span className="text-[#8B1A4A]">Our DRR</span>
             </motion.h2>
             <motion.blockquote 
-              className="relative pl-6 mb-6"
+              className="relative pl-5 sm:pl-6 mb-5 sm:mb-6"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <span className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#8B1A4A] to-[#e54d7e] rounded-full" />
-              <p className="text-gray-600 italic text-lg leading-relaxed">
+              <p className="text-gray-600 italic text-base sm:text-lg leading-relaxed">
                 “The best way to find yourself is to lose yourself in the service of others.” — Mahatma Gandhi
               </p>
             </motion.blockquote>
@@ -644,22 +685,22 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
                 Welcome to a movement of young leaders committed to creating lasting impact through service, fellowship, leadership and professional development. As Rotaractors, we recognize that volunteerism is one of the most powerful tools for transforming communities and empowering individuals. Through every project, partnership, and act of service, we demonstrate that young people are not merely the leaders of tomorrow, they are the changemakers of today.
               </p>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
                 Across Ghana and beyond, Rotaract members continue to make meaningful contributions through initiatives aligned with Rotary's Seven Areas of Focus: promoting peace, fighting disease, providing clean water and sanitation, supporting maternal and child health, advancing basic education and literacy, growing local economies, and protecting the environment. From health outreach programs and educational support projects to environmental sustainability campaigns and community development initiatives, our members are actively responding to the needs of society while developing their leadership potential.
               </p>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
                 As District Rotaract Representative, I am inspired daily by the dedication, innovation, and resilience of our members. Together, we are building stronger communities, fostering global connections, and creating opportunities for young people to lead with purpose and serve with impact.
               </p>
-              <p className="text-gray-600 mb-7 leading-relaxed">
+              <p className="text-gray-600 text-sm sm:text-base mb-6 sm:mb-7 leading-relaxed">
                 Thank you for visiting our platform. I invite you to explore our projects, celebrate our achievements, and join us as we continue to make a difference in Ghana, across Africa, and throughout the world.
               </p>
-              <p className="font-black text-gray-900 text-lg">Rotaractor Kingdom Kededor Avisseh</p>
-              <p className="text-gray-400 text-sm mb-7">District Rotaract Representative<br />2026-27 Rotary Year</p>
+              <p className="font-black text-gray-900 text-base sm:text-lg">Rotaractor Kingdom Kededor Avisseh</p>
+              <p className="text-gray-400 text-xs sm:text-sm mb-6 sm:mb-7">District Rotaract Representative<br />2026-27 Rotary Year</p>
               <Link to="/about/drr"
-                className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group"
+                className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-5 sm:px-7 py-3 sm:py-3.5 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group text-sm sm:text-base"
               >
                 Learn More About the DRR
                 <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
@@ -670,14 +711,14 @@ const HomePage = () => {
       </section>
 
       {/* ─── FOCUS AREAS ─────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#fdf2f6] overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection variant="fadeUp" className="text-center mb-16">
-            <span className="inline-block text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em] mb-4">Areas of Focus</span>
-            <h2 className="font-display font-black text-gray-900 text-4xl md:text-5xl lg:text-6xl mb-5">
+      <section className="py-16 sm:py-20 md:py-24 bg-[#fdf2f6] overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <AnimatedSection variant="fadeUp" className="text-center mb-10 sm:mb-12 md:mb-16">
+            <span className="inline-block text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] mb-3 sm:mb-4">Areas of Focus</span>
+            <h2 className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-5">
               No challenge is<br /><span className="text-[#8B1A4A]">too big for us</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-4">
               For more than a century, we've bridged cultures and connected continents — championing peace, fighting illiteracy and poverty, and protecting our planet.
             </p>
           </AnimatedSection>
@@ -687,7 +728,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-10"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
           >
             {[
               { title: "Fighting\nDisease", image: healthImg, color: "#10B981", ix: -80, iy: -40 },
@@ -705,14 +746,14 @@ const HomePage = () => {
                 whileHover={{ scale: 1.08, transition: { duration: 0.25 } }}
                 className="text-center group cursor-pointer"
               >
-                <div className="relative mb-4 mx-auto w-40 h-40 md:w-48 md:h-48 lg:w-54 lg:h-54 rounded-full overflow-hidden shadow-md group-hover:shadow-2xl transition-shadow duration-300"
+                <div className="relative mb-3 sm:mb-4 mx-auto w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-md group-hover:shadow-2xl transition-shadow duration-300"
                   style={{ boxShadow: `0 8px 24px -8px ${area.color}30` }}
                 >
                   <img src={area.image} alt={area.title.replace('\n', ' ')} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-[#8B1A4A]/60 transition-all duration-300" />
                   <div className="absolute inset-0 bg-[#8B1A4A]/0 group-hover:bg-[#8B1A4A]/20 transition-colors duration-300 rounded-full" />
                 </div>
-                <h3 className="font-display font-black text-gray-800 text-sm md:text-base whitespace-pre-line leading-tight group-hover:text-[#8B1A4A] transition-colors duration-200">
+                <h3 className="font-display font-black text-gray-800 text-xs sm:text-sm md:text-base whitespace-pre-line leading-tight group-hover:text-[#8B1A4A] transition-colors duration-200">
                   {area.title}
                 </h3>
               </motion.div>
@@ -722,12 +763,12 @@ const HomePage = () => {
       </section>
 
       {/* ─── DISTRICT HIGHLIGHTS ─────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
             <AnimatedSection variant="fadeUp">
-              <span className="text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em]">District Highlights</span>
-              <h2 className="font-display font-black text-gray-900 text-4xl md:text-5xl mt-2">Stories of Impact</h2>
+              <span className="text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em]">District Highlights</span>
+              <h2 className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl mt-2">Stories of Impact</h2>
             </AnimatedSection>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -746,7 +787,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6"
+            className="grid sm:grid-cols-2 md:grid-cols-3 gap-6"
           >
             {highlights.map((h, i) => (
               <motion.div 
@@ -755,13 +796,13 @@ const HomePage = () => {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300"
               >
-                <div className="h-52 relative overflow-hidden">
+                <div className="h-48 sm:h-52 relative overflow-hidden">
                   <img src={h.image} alt={h.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  <span className="absolute top-4 left-4 bg-[#8B1A4A] text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wide">{h.cat}</span>
+                  <span className="absolute top-4 left-4 bg-[#8B1A4A] text-white text-[10px] sm:text-xs font-black px-2 sm:px-3 py-1 rounded-full uppercase tracking-wide">{h.cat}</span>
                 </div>
-                <div className="p-6">
-                  <p className="text-gray-400 text-xs font-semibold mb-2">{h.date}</p>
-                  <h3 className="font-display font-black text-gray-900 text-lg mb-3 leading-tight">{h.title}</h3>
+                <div className="p-5 sm:p-6">
+                  <p className="text-gray-400 text-[10px] sm:text-xs font-semibold mb-2">{h.date}</p>
+                  <h3 className="font-display font-black text-gray-900 text-base sm:text-lg mb-3 leading-tight">{h.title}</h3>
                   <p className="text-gray-500 text-sm mb-4 leading-relaxed">{h.excerpt}</p>
                   <span className="inline-flex items-center gap-1.5 text-[#8B1A4A] font-bold text-sm cursor-pointer hover:gap-2.5 transition-all">
                     Read More <FaChevronRight size={10} />
@@ -776,7 +817,7 @@ const HomePage = () => {
       {/* ─── PHOTO GALLERY STRIP ─────────────────────────────────────────────── */}
       <section className="py-0 overflow-hidden bg-gray-50">
         <motion.div 
-          className="flex gap-0"
+          className="flex flex-wrap sm:flex-nowrap gap-0"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -785,7 +826,7 @@ const HomePage = () => {
           {galleryImages.map((img, i) => (
             <motion.div
               key={i}
-              className="relative flex-1 min-w-[200px] h-56 md:h-72 overflow-hidden group cursor-pointer"
+              className="relative flex-1 min-w-[120px] sm:min-w-[180px] md:min-w-[200px] h-40 sm:h-48 md:h-56 lg:h-72 overflow-hidden group cursor-pointer"
               whileHover={{ flex: 2.5 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.05  }}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -794,133 +835,138 @@ const HomePage = () => {
             >
               <img src={img.src} alt={img.caption} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 bg-[#8B1A4A]/0 group-hover:bg-[#8B1A4A]/60 transition-colors duration-400" />
-              <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white font-bold text-sm leading-tight">{img.caption}</p>
+              <div className="absolute inset-0 flex items-end p-2 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-white font-bold text-[10px] sm:text-sm leading-tight">{img.caption}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
-        <div className="bg-[#8B1A4A] py-4 text-center">
-          <Link to="/media/gallery" className="inline-flex items-center gap-2 text-white font-bold text-sm uppercase tracking-wider hover:gap-3 transition-all">
+        <div className="bg-[#8B1A4A] py-3 sm:py-4 text-center">
+          <Link to="/media/gallery" className="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm uppercase tracking-wider hover:gap-3 transition-all">
             Explore Full Gallery <FaArrowRight size={13} />
           </Link>
         </div>
       </section>
 
       {/* NEW: Four Way Test */}
-          <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-12">
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-heading font-bold text-xs uppercase tracking-wider mb-4">
-                    Our Guiding Principles
+          <section className="py-16 sm:py-20 bg-background">
+  <div className="container mx-auto px-4 sm:px-6">
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-10 sm:mb-12">
+        <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-primary/10 text-primary font-heading font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-4">
+          Our Guiding Principles
+        </span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-primary mb-3 sm:mb-4">
+          The Four-Way Test
+        </h2>
+        <p className="text-gray-600 font-body text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
+          Rotary's ethical guide — a test of the things members think, say, or do
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+        {fourWayTestItems.map((item) => (
+          <div
+            key={item.number}
+            className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
+              <img
+                src={item.image}
+                alt={`Four-Way Test - ${item.question}`}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+
+            <div className="p-3 sm:p-4 flex-1 justify-end">
+              <div className="transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                <div className="inline-block mb-2 sm:mb-3">
+                  <span className="text-accent600 font-heading font-black text-2xl sm:text-3xl md:text-4xl">
+                    {item.number}
                   </span>
-                  <h2 className="text-4xl md:text-5xl font-heading font-black text-primary mb-4">
-                    The Four-Way Test
-                  </h2>
-                  <p className="text-gray-600 font-body text-lg max-w-2xl mx-auto">
-                    Rotary's ethical guide — a test of the things members think, say, or do
-                  </p>
                 </div>
-      
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                  {fourWayTestItems.map((item) => (
-                    <div
-                      key={item.number}
-                      className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    >
-                      <div className="relative h-74 overflow-hidden">
-                        <img
-                          src={item.image}
-                          alt={`Four-Way Test - ${item.question}`}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                        
-                      </div>
-      
-                      <div className="p-4 flex-1 justify-end">
-                        <div className="transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                          <div className="inline-block mb-3">
-                            <span className="text-accent600 font-heading font-black text-4xl">
-                              {item.number}
-                            </span>
-                          </div>
-                          <h3 className="font-heading font-bold text-xl text-accent600 leading-tight drop-shadow-lg">
-                            {item.question}
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="font-heading font-bold text-xs sm:text-sm md:text-base lg:text-xl text-accent600 leading-tight drop-shadow-lg">
+                  {item.question}
+                </h3>
               </div>
             </div>
-          </section>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ─── TEAM PREVIEW ────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection variant="fadeUp" className="text-center mb-16">
-            <span className="text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em] mb-3 block">District Leadership</span>
-            <h2 className="font-display font-black text-gray-900 text-4xl md:text-5xl lg:text-6xl">
-              Meet Our<br /><span className="text-[#8B1A4A]">Leadership Team</span>
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto mt-4 text-base">The passionate individuals driving Rotaract District 9104 forward</p>
-          </AnimatedSection>
+      <section className="py-16 sm:py-20 md:py-24 bg-white">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <AnimatedSection variant="fadeUp" className="text-center mb-10 sm:mb-12 md:mb-16">
+      <span className="text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] mb-2 sm:mb-3 block">District Leadership</span>
+      <h2 className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+        Meet Our<br /><span className="text-[#8B1A4A]">Leadership Team</span>
+      </h2>
+      <p className="text-gray-500 max-w-xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base px-4">The passionate individuals driving Rotaract District 9104 forward</p>
+    </AnimatedSection>
 
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
-          >
-            {[
-              { name: "Rtr. Kingdom Kededor Avisseh", position: "District Rotaract Representative", image: drrImg },
-              { name: "Rtr. Sedinam Edreh", position: "Vice District Rotaract Representative", image: vdrRImg },
-              { name: "Rtr. Emmanuel Boakye-Dankwah", position: "Vice District Rotaract Representative", image: vdrRImg2 },
-            ].map((member, index) => (
-              <motion.div 
-                key={member.name}
-                variants={fadeInUp}
-                whileHover={{ y: -8 }}
-                className="group"
-              >
-                <div className="relative mb-5 overflow-hidden rounded-2xl shadow-md group-hover:shadow-2xl transition-all duration-400">
-                  <div className="aspect-[3/4] overflow-hidden">
-                    <img src={member.image} alt={member.name}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#3f0820]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="text-center">
-                  <h3 className="font-display font-black text-gray-900 text-base mb-1 group-hover:text-[#8B1A4A] transition-colors">{member.name}</h3>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">{member.position}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <div className="text-center">
-            <Link to="/about/team"
-              className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-10 py-4 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group"
-            >
-              View Full Team
-              <FaArrowRight className="group-hover:translate-x-1.5 transition-transform" size={14} />
-            </Link>
+    <motion.div 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12"
+    >
+      {[
+        { name: "Rtr. Kingdom Kededor Avisseh", position: "District Rotaract Representative", image: drrImg },
+        { name: "Rtr. Sedinam Edreh", position: "Vice District Rotaract Representative", image: vdrRImg },
+        { name: "Rtr. Emmanuel Boakye-Dankwah", position: "Vice District Rotaract Representative", image: vdrRImg2 },
+      ].map((member, index) => (
+        <motion.div 
+          key={member.name}
+          variants={fadeInUp}
+          whileHover={{ y: -6 }}
+          className="group max-w-xs mx-auto sm:max-w-none"
+        >
+          <div className="relative mb-3 sm:mb-4 md:mb-5 overflow-hidden rounded-xl sm:rounded-2xl shadow-md group-hover:shadow-2xl transition-all duration-400">
+            <div className="aspect-[3/4] overflow-hidden">
+              <img 
+                src={member.image} 
+                alt={member.name}
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#3f0820]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-        </div>
-      </section>
+          <div className="text-center px-2">
+            <h3 className="font-display font-black text-gray-900 text-xs sm:text-sm md:text-base mb-1 group-hover:text-[#8B1A4A] transition-colors leading-tight">
+              {member.name}
+            </h3>
+            <p className="text-gray-400 text-[8px] sm:text-[10px] md:text-xs uppercase tracking-wider font-semibold leading-tight">
+              {member.position}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+
+    <div className="text-center">
+      <Link to="/about/team"
+        className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group text-xs sm:text-sm md:text-base"
+      >
+        View Full Team
+        <FaArrowRight className="group-hover:translate-x-1.5 transition-transform" size={12} />
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* ─── UPCOMING EVENTS ─────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#fdf2f6]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <section className="py-16 sm:py-20 bg-[#fdf2f6]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
             <AnimatedSection variant="fadeUp">
-              <span className="text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em]">What's On</span>
-              <h2 className="font-display font-black text-gray-900 text-4xl md:text-5xl mt-2">Upcoming Events</h2>
+              <span className="text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em]">What's On</span>
+              <h2 className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl mt-2">Upcoming Events</h2>
             </AnimatedSection>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -944,13 +990,13 @@ const HomePage = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.5 }}
                   whileHover={{ scale: 1.02 }}
-                  className="group bg-white rounded-2xl p-5 border border-gray-100 hover:border-[#8B1A4A]/30 hover:shadow-lg transition-all duration-300"
+                  className="group bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 hover:border-[#8B1A4A]/30 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="mb-4 text-xs uppercase tracking-[0.22em] text-[#8B1A4A] font-bold">
+                  <div className="mb-3 sm:mb-4 text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[#8B1A4A] font-bold">
                     {event.dateLabel || "Date TBD"}
                   </div>
-                  <h4 className="font-display font-black text-gray-900 text-base group-hover:text-[#8B1A4A] transition-colors">{event.title}</h4>
-                  <p className="text-gray-500 text-sm mt-3">{event.desc}</p>
+                  <h4 className="font-display font-black text-gray-900 text-sm sm:text-base group-hover:text-[#8B1A4A] transition-colors">{event.title}</h4>
+                  <p className="text-gray-500 text-xs sm:text-sm mt-2 sm:mt-3">{event.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -962,25 +1008,25 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-[#8B1A4A] text-white rounded-2xl p-8 relative overflow-hidden"
+              className="bg-[#8B1A4A] text-white rounded-2xl p-6 sm:p-8 relative overflow-hidden"
             >
               <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 80%, #fff 0, transparent 50%), radial-gradient(circle at 80% 20%, #fff 0, transparent 50%)" }} />
               <div className="relative z-10">
-                <span className="inline-block text-white/70 text-xs font-black uppercase tracking-[0.2em] mb-4">Featured Event</span>
-                <h3 className="font-display font-black text-white text-3xl mb-3">DLAC 2027</h3>
-                <p className="text-white/80 text-sm mb-6 leading-relaxed">
+                <span className="inline-block text-white/70 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-3 sm:mb-4">Featured Event</span>
+                <h3 className="font-display font-black text-white text-2xl sm:text-3xl mb-3">DLAC 2027</h3>
+                <p className="text-white/80 text-sm mb-5 sm:mb-6 leading-relaxed">
                   The District Learning Assembly and Conference is the premier annual gathering of Rotaractors in District 9104. Join us for inspiring sessions, fellowship, and service.
                 </p>
-                <ul className="space-y-2 mb-7">
+                <ul className="space-y-2 mb-5 sm:mb-7">
                   {["Leadership Workshops", "Service Projects", "Fellowship & Networking", "Awards Ceremony"].map(item => (
-                    <li key={item} className="flex items-center gap-2 text-white/90 text-sm">
+                    <li key={item} className="flex items-center gap-2 text-white/90 text-xs sm:text-sm">
                       <span className="w-1.5 h-1.5 bg-[#e54d7e] rounded-full flex-shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
                 <Link to="/events/dlac"
-                  className="inline-flex items-center gap-2 bg-white text-[#8B1A4A] font-black px-6 py-3 rounded-full hover:bg-[#fdf2f6] transition-all duration-300 group"
+                  className="inline-flex items-center gap-2 bg-white text-[#8B1A4A] font-black px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-[#fdf2f6] transition-all duration-300 group text-sm sm:text-base"
                 >
                   Register Now
                   <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
@@ -992,11 +1038,11 @@ const HomePage = () => {
       </section>
 
       {/* ─── IMPACT STORIES ──────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection variant="fadeUp" className="text-center mb-14">
-            <span className="text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em] mb-3 block">Impact Stories</span>
-            <h2 className="font-display font-black text-gray-900 text-4xl md:text-5xl">
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <AnimatedSection variant="fadeUp" className="text-center mb-10 sm:mb-14">
+            <span className="text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] mb-2 sm:mb-3 block">Impact Stories</span>
+            <h2 className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl">
               Transforming Lives<br /><span className="text-[#8B1A4A]">Across Ghana</span>
             </h2>
           </AnimatedSection>
@@ -1006,7 +1052,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6 mb-10"
+            className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8 sm:mb-10"
           >
             {[
               { date: "May 2026", title: "Healthcare Initiative Reaches 5,000 Beneficiaries", excerpt: "Our district-wide health outreach program has screened and provided preventive care to thousands.", tag: "Health" },
@@ -1020,13 +1066,13 @@ const HomePage = () => {
                 className="group bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div className="h-1.5 bg-gradient-to-r from-[#8B1A4A] to-[#e54d7e]" />
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="bg-[#fdf2f6] text-[#8B1A4A] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wide">{story.tag}</span>
-                    <span className="text-gray-400 text-xs font-semibold">{story.date}</span>
+                <div className="p-5 sm:p-6">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <span className="bg-[#fdf2f6] text-[#8B1A4A] text-[10px] sm:text-xs font-black px-2 sm:px-3 py-1 rounded-full uppercase tracking-wide">{story.tag}</span>
+                    <span className="text-gray-400 text-[10px] sm:text-xs font-semibold">{story.date}</span>
                   </div>
-                  <h3 className="font-display font-black text-gray-900 text-lg mb-3 leading-tight">{story.title}</h3>
-                  <p className="text-gray-500 text-sm mb-5 leading-relaxed">{story.excerpt}</p>
+                  <h3 className="font-display font-black text-gray-900 text-base sm:text-lg mb-3 leading-tight">{story.title}</h3>
+                  <p className="text-gray-500 text-sm mb-4 sm:mb-5 leading-relaxed">{story.excerpt}</p>
                   <span className="inline-flex items-center gap-1.5 text-[#8B1A4A] font-bold text-sm group-hover:gap-2.5 transition-all cursor-pointer">
                     Read More <FaChevronRight size={10} />
                   </span>
@@ -1037,7 +1083,7 @@ const HomePage = () => {
 
           <div className="text-center">
             <Link to="/media/blog"
-              className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-9 py-4 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group"
+              className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-6 sm:px-9 py-3 sm:py-4 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group text-sm sm:text-base"
             >
               View All Stories
               <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
@@ -1047,15 +1093,15 @@ const HomePage = () => {
       </section>
 
       {/* ─── RESOURCES ───────────────────────────────────────────────────────── */}
-<section className="py-20 bg-[#fdf2f6]">
-  <div className="max-w-6xl mx-auto px-6">
-    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<section className="py-16 sm:py-20 bg-[#fdf2f6]">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
       <AnimatedSection variant="fadeUp">
-        <span className="text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em] mb-3 block">Resources</span>
-        <h2 className="font-display font-black text-gray-900 text-4xl md:text-5xl">
+        <span className="text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] mb-2 sm:mb-3 block">Resources</span>
+        <h2 className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl">
           Rotaract Resources<br /><span className="text-[#8B1A4A]">&amp; Downloads</span>
         </h2>
-        <p className="text-gray-500 max-w-xl mt-2 text-base">Essential guides and materials for clubs and members across District 9104</p>
+        <p className="text-gray-500 max-w-xl mt-2 text-sm sm:text-base">Essential guides and materials for clubs and members across District 9104</p>
       </AnimatedSection>
       
       <motion.div
@@ -1064,7 +1110,7 @@ const HomePage = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <Link to="/resources" className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-6 py-3 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group">
+        <Link to="/resources" className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-lg hover:shadow-[#8B1A4A]/30 hover:shadow-xl group text-sm sm:text-base">
           View All Resources
           <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
         </Link>
@@ -1076,29 +1122,28 @@ const HomePage = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5"
     >
       {[
         { id: 1, title: "District 9104 Song Book", desc: "Official collection of Rotaract and Rotary songs for District 9104", type: "PDF", url: "/files/District 9104 Song Book.pdf", category: "Song Book" },
         { id: 2, title: "District Bylaw 2026-27", desc: "Official district bylaws and governance guidelines for the 2026-27 term", type: "PDF", url: "/files/District Bylaw 2026-2027.pdf", category: "Bylaws" },
         { id: 3, title: "Oath of Membership", desc: "Official oath for new Rotaract members joining the movement", type: "PDF", url: "/files/Oath of Membership.pdf", category: "Oaths" },
         { id: 4, title: "Oath of Office for Presidents", desc: "Official oath for club presidents and incoming leaders", type: "PDF", url: "/files/Oath of Office FOR PRESIDENTS.pdf", category: "Oaths" },
-        // Add more resources as needed
       ].slice(0, 4).map((r, index) => (
         <motion.div 
           key={r.id}
           variants={fadeInUp}
           whileHover={{ y: -6 }}
-          className="group bg-white p-6 border border-gray-100 hover:border-[#8B1A4A]/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col rounded-2xl"
+          className="group bg-white p-5 sm:p-6 border border-gray-100 hover:border-[#8B1A4A]/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col rounded-2xl"
         >
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#8B1A4A] to-[#e54d7e] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-black uppercase tracking-wider text-[#8B1A4A] bg-[#fdf2f6] px-2 py-0.5 rounded">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#8B1A4A] bg-[#fdf2f6] px-2 py-0.5 rounded">
               {r.category}
             </span>
           </div>
-          <h3 className="font-display font-black text-gray-900 text-base mb-2 group-hover:text-[#8B1A4A] transition-colors line-clamp-2">{r.title}</h3>
-          <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1 line-clamp-2">{r.desc}</p>
+          <h3 className="font-display font-black text-gray-900 text-sm sm:text-base mb-2 group-hover:text-[#8B1A4A] transition-colors line-clamp-2">{r.title}</h3>
+          <p className="text-gray-500 text-sm leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-2">{r.desc}</p>
           <div className="flex items-center justify-between mt-auto">
             <div className="flex items-center gap-2 text-xs text-gray-400">
               <span className="bg-gray-100 text-gray-500 px-2 py-0.5 rounded font-bold">{r.type}</span>
@@ -1106,7 +1151,7 @@ const HomePage = () => {
             <motion.a href={r.url} download
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-1.5 bg-[#8B1A4A] text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-[#6b1238] transition-colors"
+              className="inline-flex items-center gap-1.5 bg-[#8B1A4A] text-white text-xs font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-[#6b1238] transition-colors"
             >
               <FaDownload size={10} /> Download
             </motion.a>
@@ -1118,8 +1163,8 @@ const HomePage = () => {
 </section>
 
       {/* ─── QUICK LINKS ─────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#8B1A4A]">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <section className="py-12 sm:py-16 bg-[#8B1A4A]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {quickLinks.map((q, i) => (
             <motion.div 
               key={q.title}
@@ -1130,11 +1175,11 @@ const HomePage = () => {
               whileHover={{ scale: 1.05 }}
             >
               <Link to={q.to}
-                className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-2xl p-7 transition-all duration-300 group border border-white/10 hover:border-white/30"
+                className="flex flex-col items-center text-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-2xl p-4 sm:p-7 transition-all duration-300 group border border-white/10 hover:border-white/30"
               >
-                <q.icon className="text-white/80 group-hover:text-white mb-3 transition-colors" size={30} />
-                <h4 className="font-display font-black text-base mb-1">{q.title}</h4>
-                <p className="text-white/70 text-xs group-hover:text-white/90 transition-colors">{q.sub}</p>
+                <q.icon className="text-white/80 group-hover:text-white mb-2 sm:mb-3 transition-colors" size={24} />
+                <h4 className="font-display font-black text-sm sm:text-base mb-1">{q.title}</h4>
+                <p className="text-white/70 text-[10px] sm:text-xs group-hover:text-white/90 transition-colors">{q.sub}</p>
               </Link>
             </motion.div>
           ))}
@@ -1142,8 +1187,8 @@ const HomePage = () => {
       </section>
 
       {/* ─── CTA BANNER ──────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-16 sm:py-20 bg-white overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1151,7 +1196,7 @@ const HomePage = () => {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.span 
-              className="text-[#8B1A4A] text-xs font-black uppercase tracking-[0.22em] mb-4 block"
+              className="text-[#8B1A4A] text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] mb-3 sm:mb-4 block"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -1160,7 +1205,7 @@ const HomePage = () => {
               Get Involved
             </motion.span>
             <motion.h2 
-              className="font-display font-black text-gray-900 text-4xl md:text-5xl lg:text-6xl mb-6"
+              className="font-display font-black text-gray-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6"
               initial={{ clipPath: "inset(0 50% 0 50%)" }}
               whileInView={{ clipPath: "inset(0 0% 0 0%)" }}
               viewport={{ once: true }}
@@ -1169,7 +1214,7 @@ const HomePage = () => {
               Ready to Make<br /><span className="text-[#8B1A4A]">a Difference?</span>
             </motion.h2>
             <motion.p 
-              className="text-gray-500 text-lg mb-10 max-w-xl mx-auto leading-relaxed"
+              className="text-gray-500 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1178,20 +1223,20 @@ const HomePage = () => {
               Join thousands of young leaders across Ghana who are transforming communities and building a better future through Rotaract.
             </motion.p>
             <motion.div 
-              className="flex flex-wrap gap-4 justify-center"
+              className="flex flex-wrap gap-3 sm:gap-4 justify-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               <Link to="/join"
-                className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-9 py-4 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-xl hover:shadow-[#8B1A4A]/30 hover:shadow-2xl group"
+                className="inline-flex items-center gap-2 bg-[#8B1A4A] text-white font-bold px-6 sm:px-9 py-3 sm:py-4 rounded-full hover:bg-[#6b1238] transition-all duration-300 shadow-xl hover:shadow-[#8B1A4A]/30 hover:shadow-2xl group text-sm sm:text-base"
               >
                 Join Rotaract Today
                 <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link to="/contact/club-locator"
-                className="inline-flex items-center gap-2 border-2 border-[#8B1A4A] text-[#8B1A4A] font-bold px-9 py-4 rounded-full hover:bg-[#8B1A4A] hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-2 border-2 border-[#8B1A4A] text-[#8B1A4A] font-bold px-6 sm:px-9 py-3 sm:py-4 rounded-full hover:bg-[#8B1A4A] hover:text-white transition-all duration-300 text-sm sm:text-base"
               >
                 Find a Club Near You
               </Link>
